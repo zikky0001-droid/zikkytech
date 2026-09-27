@@ -1,0 +1,2202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#08090c">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="DEVZIKKY TECH — projects, tools, APIs and bots built by DEVZIKKY.">
+  <meta property="og:title" content="DEVZIKKY TECH">
+  <meta property="og:description" content="Projects, tools, APIs and bots built by DEVZIKKY.">
+  <meta property="og:image" content="icon.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="icon.png">
+  <title>DEVZIKKY TECH — Developer & Builder</title>
+
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+
+:root {
+  --bg: #08090c;
+  --surface: #0e161e;
+  --surface-2: #111b25;
+  --surface-3: #16212c;
+  --text: #f2f0ea;
+  --muted: #8993a4;
+  --line: rgba(255,255,255,.085);
+  --line-strong: rgba(255,255,255,.15);
+
+  --primary: #8b17b6;
+  --primary-soft: rgba(139,23,182,.16);
+  --primary-glow: rgba(139,23,182,.40);
+
+  --secondary: #00ffea;
+  --secondary-soft: rgba(0,255,234,.10);
+  --secondary-glow: rgba(0,255,234,.32);
+
+  --accent: #ff2a6d;
+  --accent-soft: rgba(255,42,109,.12);
+  --accent-glow: rgba(255,42,109,.30);
+
+  --radius: 18px;
+  --max: 1180px;
+  --header-h: 72px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 20px);
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  min-width: 0;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(139,23,182,.13), transparent 31rem),
+    radial-gradient(circle at 95% 18%, rgba(0,255,234,.065), transparent 27rem),
+    var(--bg);
+  color: var(--text);
+  font-family: "Inter", system-ui, sans-serif;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.mono {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+::selection {
+  background: var(--primary);
+  color: white;
+}
+
+.page-grid {
+  position: fixed;
+  inset: 0;
+  z-index: -4;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 85% 60% at 50% 0%, black 20%, transparent 78%);
+  opacity: .55;
+}
+
+.ambient {
+  position: fixed;
+  width: 330px;
+  height: 330px;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: .10;
+  pointer-events: none;
+  z-index: -3;
+}
+
+.ambient-a {
+  top: 8%;
+  left: -190px;
+  background: var(--primary);
+}
+
+.ambient-b {
+  top: 48%;
+  right: -190px;
+  background: var(--secondary);
+}
+
+.section-shell {
+  width: min(var(--max), calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.site-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 100;
+  height: var(--header-h);
+  border-bottom: 1px solid var(--line);
+  background: rgba(8,9,12,.84);
+  backdrop-filter: blur(18px) saturate(150%);
+}
+
+.header-inner {
+  width: min(var(--max), calc(100% - 40px));
+  height: 100%;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.brand {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+
+  color: #fff;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+
+  background: linear-gradient(
+    135deg,
+    #00e5ff,
+    #7c3aed,
+    #ff00cc,
+    #00ff88,
+    #00e5ff
+  );
+
+  background-size: 300% 300%;
+
+  box-shadow:
+    0 0 18px rgba(0, 229, 255, .45),
+    0 0 35px rgba(124, 58, 237, .25);
+
+  animation:
+    dzIconColors 5s ease infinite,
+    dzIconGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes dzIconColors {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes dzIconGlow {
+  0%, 100% {
+    box-shadow:
+      0 0 18px rgba(0, 229, 255, .45),
+      0 0 35px rgba(124, 58, 237, .25);
+  }
+
+  50% {
+    box-shadow:
+      0 0 25px rgba(255, 0, 204, .55),
+      0 0 45px rgba(0, 229, 255, .3);
+  }
+}
+
+.brand-copy {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-copy strong {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1rem;
+  line-height: 1.1;
+  letter-spacing: .02em;
+}
+
+.brand-copy small {
+  margin-top: 4px;
+  color: var(--muted);
+  font: 500 .55rem/1.2 "IBM Plex Mono", monospace;
+  letter-spacing: .07em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.desktop-nav a {
+  padding: 9px 12px;
+  border-radius: 9px;
+  color: var(--muted);
+  font-size: .83rem;
+  text-decoration: none;
+  transition: .2s ease;
+}
+
+.desktop-nav a:hover {
+  color: var(--text);
+  background: rgba(255,255,255,.055);
+}
+
+.desktop-nav .nav-cta {
+  margin-left: 5px;
+  color: white;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  box-shadow: 0 0 18px var(--primary-glow);
+}
+
+.menu-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: rgba(255,255,255,.035);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.menu-toggle span {
+  width: 17px;
+  height: 1.5px;
+  border-radius: 2px;
+  background: var(--text);
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(5.5px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-5.5px) rotate(-45deg);
+}
+
+.hero {
+  min-height: min(760px, 100svh);
+  padding-top: calc(var(--header-h) + 74px);
+  padding-bottom: 74px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(310px, .8fr);
+  align-items: center;
+  gap: 58px;
+}
+
+.eyebrow {
+  width: fit-content;
+  max-width: 100%;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 11px;
+  border: 1px solid rgba(0,255,234,.22);
+  border-radius: 999px;
+  background: var(--secondary-soft);
+  color: var(--secondary);
+  font: 500 .66rem/1 "IBM Plex Mono", monospace;
+  letter-spacing: .08em;
+  white-space: nowrap;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  flex: 0 0 6px;
+  border-radius: 50%;
+  background: var(--secondary);
+  box-shadow: 0 0 12px var(--secondary);
+}
+
+.eyebrow-time {
+  padding-left: 7px;
+  border-left: 1px solid rgba(0,255,234,.2);
+}
+
+.hero h1 {
+  max-width: 840px;
+  margin: 19px 0 20px;
+  font-size: clamp(2.55rem, 5.3vw, 4.65rem);
+  line-height: 1.02;
+  letter-spacing: -.045em;
+}
+
+.hero h1 em {
+  font-style: normal;
+  background: linear-gradient(135deg, var(--primary) 15%, var(--secondary) 75%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-lead {
+  max-width: 680px;
+  margin-bottom: 27px;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.hero-lead strong {
+  color: var(--text);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.button {
+  min-height: 45px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 17px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: .82rem;
+  font-weight: 600;
+  transition: transform .2s ease, border-color .2s ease, background .2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  color: white;
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  box-shadow: 0 0 22px var(--primary-glow);
+}
+
+.button-secondary {
+  background: rgba(255,255,255,.03);
+}
+
+.profile-stamp {
+  padding: 23px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(14,22,30,.86);
+  box-shadow: 0 28px 65px rgba(0,0,0,.35);
+  backdrop-filter: blur(16px) saturate(150%);
+}
+
+.stamp-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.stamp-label {
+  color: var(--muted);
+  font-size: .61rem;
+  letter-spacing: .09em;
+}
+
+.live-state {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--secondary);
+  font: 600 .62rem "IBM Plex Mono", monospace;
+  white-space: nowrap;
+}
+
+.live-state span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--secondary);
+  box-shadow: 0 0 10px var(--secondary);
+}
+
+.stamp-divider {
+  height: 1px;
+  margin: 20px 0 10px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--line) 0 7px,
+    transparent 7px 13px
+  );
+}
+
+.stamp-row {
+  min-width: 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: .78rem;
+}
+
+.stamp-row:last-child {
+  border-bottom: 0;
+}
+
+.stamp-row > span {
+  color: var(--muted);
+}
+
+.stamp-row strong {
+  max-width: 62%;
+  color: var(--text);
+  font: 500 .72rem/1.4 "IBM Plex Mono", monospace;
+  text-align: right;
+}
+
+.tech-rail {
+  border-block: 1px solid var(--line);
+  background: rgba(255,255,255,.018);
+}
+
+.rail-inner {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-block: 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.rail-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.rail-inner span {
+  flex: 0 0 auto;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font: 500 .62rem "IBM Plex Mono", monospace;
+}
+
+.content-section {
+  padding-top: 82px;
+  padding-bottom: 82px;
+}
+
+.section-heading {
+  max-width: 760px;
+  margin-bottom: 28px;
+}
+
+.section-kicker {
+  color: var(--secondary);
+  font: 600 .63rem "IBM Plex Mono", monospace;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  margin: 7px 0 8px;
+  font-size: clamp(1.85rem, 3.2vw, 2.65rem);
+  letter-spacing: -.025em;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1.25fr .75fr;
+  gap: 14px;
+}
+
+.feature-panel {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(14,22,30,.82);
+  box-shadow: 0 12px 40px rgba(0,0,0,.16);
+  backdrop-filter: blur(14px);
+  overflow: hidden;
+}
+
+.about-main {
+  grid-row: span 2;
+  display: grid;
+  grid-template-columns: 52px minmax(0,1fr);
+  gap: 17px;
+  padding: 24px;
+}
+
+.about-main .panel-icon {
+  margin-top: 2px;
+}
+
+.about-side {
+  padding: 20px;
+}
+
+.panel-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: white;
+  background: var(--primary-soft);
+  border: 1px solid rgba(139,23,182,.22);
+  box-shadow: 0 0 22px rgba(139,23,182,.12);
+}
+
+.panel-icon.cyan {
+  color: var(--secondary);
+  background: var(--secondary-soft);
+  border-color: rgba(0,255,234,.18);
+}
+
+.panel-icon.pink {
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-color: rgba(255,42,109,.18);
+}
+
+.feature-panel h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.feature-panel p {
+  margin: 0 0 11px;
+  color: var(--muted);
+  font-size: .82rem;
+}
+
+.feature-panel p:last-child {
+  margin-bottom: 0;
+}
+
+.mini-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 13px;
+}
+
+.mini-list span {
+  padding: 5px 8px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  color: var(--muted);
+  font: 500 .58rem "IBM Plex Mono", monospace;
+}
+
+.journey-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 12px;
+}
+
+.journey-card {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(14,22,30,.72);
+}
+
+.journey-number {
+  display: block;
+  margin-bottom: 22px;
+  color: var(--primary);
+  font: 600 .65rem "IBM Plex Mono", monospace;
+}
+
+.journey-card h3 {
+  margin-bottom: 7px;
+  font-size: .98rem;
+}
+
+.journey-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .76rem;
+}
+
+.skills-panel {
+  margin-top: 12px;
+  padding: 21px;
+  display: grid;
+  grid-template-columns: 190px minmax(0,1fr);
+  gap: 25px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(14,22,30,.72);
+}
+
+.skills-panel h3 {
+  margin: 7px 0 0;
+  font-size: .98rem;
+}
+
+.skill-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  align-content: start;
+}
+
+.skill-cloud span {
+  padding: 6px 9px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+  background: rgba(255,255,255,.018);
+  font: 500 .61rem "IBM Plex Mono", monospace;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 18px;
+}
+
+.filter {
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  background: rgba(255,255,255,.025);
+  cursor: pointer;
+  font: 500 .63rem "IBM Plex Mono", monospace;
+  transition: .2s ease;
+}
+
+.filter:hover {
+  color: var(--text);
+  border-color: var(--line-strong);
+}
+
+.filter.active {
+  color: white;
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  box-shadow: 0 0 16px var(--primary-glow);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 14px;
+}
+
+.project-card {
+  min-width: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(14,22,30,.82);
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(139,23,182,.35);
+  box-shadow: 0 22px 42px rgba(0,0,0,.26), 0 0 24px rgba(139,23,182,.11);
+}
+
+.project-image {
+  position: relative;
+  height: 175px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 20%, var(--primary-soft), transparent 55%),
+    #090d12;
+  cursor: zoom-in;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.035);
+}
+
+.project-fallback {
+  position: absolute;
+  inset: 0;
+  display: none;
+  place-items: center;
+  align-content: center;
+  gap: 7px;
+  padding: 20px;
+  text-align: center;
+  background:
+    radial-gradient(circle at 50% 15%, rgba(139,23,182,.24), transparent 54%),
+    radial-gradient(circle at 85% 90%, rgba(0,255,234,.10), transparent 40%),
+    #090d12;
+}
+
+.project-fallback i {
+  font-size: 1.25rem;
+  color: var(--secondary);
+}
+
+.project-fallback strong {
+  font-size: .8rem;
+}
+
+.project-fallback small {
+  color: var(--muted);
+  font: 500 .57rem "IBM Plex Mono", monospace;
+}
+
+.project-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 5px 8px;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 7px;
+  color: var(--text);
+  background: rgba(8,9,12,.72);
+  backdrop-filter: blur(8px);
+  font: 600 .57rem "IBM Plex Mono", monospace;
+}
+
+.project-body {
+  min-width: 0;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.project-body h3 {
+  margin-bottom: 6px;
+  font-size: .95rem;
+}
+
+.project-body p {
+  min-height: 43px;
+  margin: 0;
+  color: var(--muted);
+  font-size: .74rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.project-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 13px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.project-link,
+.preview-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--secondary);
+  text-decoration: none;
+  font-size: .68rem;
+  font-weight: 600;
+}
+
+.preview-link {
+  color: var(--muted);
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 10px;
+}
+
+.contact-card {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 40px minmax(0,1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(14,22,30,.75);
+  text-decoration: none;
+  transition: .2s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--line-strong);
+  background: rgba(255,255,255,.035);
+}
+
+.contact-icon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  color: white;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  box-shadow: 0 0 18px rgba(139,23,182,.18);
+}
+
+.contact-card span:nth-child(2) {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-card strong {
+  font-size: .78rem;
+}
+
+.contact-card small {
+  margin-top: 2px;
+  color: var(--muted);
+  font: 500 .59rem "IBM Plex Mono", monospace;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.contact-arrow {
+  color: var(--muted);
+  font-size: .66rem;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  background: rgba(255,255,255,.012);
+}
+
+.footer-inner {
+  min-height: 105px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-brand {
+  font: 700 .9rem "Space Grotesk", sans-serif;
+}
+
+.footer-inner p {
+  margin: 3px 0 0;
+  color: var(--muted);
+  font-size: .66rem;
+}
+
+.footer-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+  color: var(--muted);
+  font: 500 .59rem "IBM Plex Mono", monospace;
+}
+
+.ai-fab {
+  position: fixed;
+  right: 22px;
+  bottom: max(20px, env(safe-area-inset-bottom));
+  z-index: 120;
+  width: 62px;
+  height: 62px;
+  padding: 0;
+  border: 0;
+  border-radius: 19px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  isolation: isolate;
+}
+
+.fab-glow {
+  position: absolute;
+  inset: 7px;
+  border-radius: 17px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  box-shadow:
+    0 0 22px var(--primary-glow),
+    0 15px 38px rgba(0,0,0,.42);
+  z-index: -1;
+}
+
+.fab-core {
+  position: absolute;
+  inset: 11px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.17);
+  border-radius: 15px;
+  background: linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.02));
+  backdrop-filter: blur(8px);
+  font-size: 1.2rem;
+}
+
+.fab-orbit {
+  position: absolute;
+  inset: -2px;
+  border: 1px solid transparent;
+  border-radius: 22px;
+  pointer-events: none;
+}
+
+.orbit-one {
+  border-top-color: rgba(0,255,234,.65);
+  border-right-color: rgba(0,255,234,.16);
+  transform: rotate(18deg);
+  filter: drop-shadow(0 0 7px var(--secondary-glow));
+}
+
+.orbit-two {
+  inset: -6px;
+  border-bottom-color: rgba(255,42,109,.58);
+  border-left-color: rgba(139,23,182,.48);
+  transform: rotate(-25deg);
+  filter: drop-shadow(0 0 8px var(--accent-glow));
+}
+
+.ai-fab:hover .fab-core {
+  transform: scale(1.04);
+}
+
+.fab-tooltip {
+  position: absolute;
+  right: 72px;
+  top: 50%;
+  transform: translateY(-50%) translateX(5px);
+  padding: 7px 9px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-3);
+  color: var(--text);
+  font-size: .62rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: .18s ease;
+}
+
+.ai-fab:hover .fab-tooltip,
+.ai-fab:focus-visible .fab-tooltip {
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+.preview-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+
+.preview-modal.open {
+  display: flex;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.78);
+  backdrop-filter: blur(9px);
+}
+
+.modal-card {
+  position: relative;
+  z-index: 1;
+  width: min(900px, 100%);
+  max-height: min(88svh, 850px);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface-2);
+  box-shadow: 0 30px 70px rgba(0,0,0,.5);
+}
+
+.modal-head {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 8px 12px 8px 15px;
+  border-bottom: 1px solid var(--line);
+}
+
+.modal-head strong {
+  font-size: .74rem;
+}
+
+.modal-head button {
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 8px;
+  background: rgba(255,255,255,.05);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.modal-image-wrap {
+  max-height: calc(88svh - 48px);
+  overflow: auto;
+  background: #05070a;
+}
+
+.modal-image-wrap img {
+  width: 100%;
+  height: auto;
+  max-height: calc(88svh - 48px);
+  object-fit: contain;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .55s ease, transform .55s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 980px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: calc(var(--header-h) + 64px);
+  }
+
+  .profile-stamp {
+    max-width: 700px;
+  }
+
+  .journey-grid {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --header-h: 66px;
+  }
+
+  .section-shell,
+  .header-inner {
+    width: min(var(--max), calc(100% - 28px));
+  }
+
+  .desktop-nav {
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 3px;
+    padding: 10px 14px 15px;
+    border-bottom: 1px solid var(--line);
+    background: rgba(8,9,12,.97);
+    backdrop-filter: blur(18px);
+    transform: translateY(-120%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform .22s ease, opacity .18s ease, visibility .22s ease;
+  }
+
+  .desktop-nav.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .desktop-nav a {
+    width: 100%;
+    padding: 12px 11px;
+  }
+
+  .desktop-nav .nav-cta {
+    margin: 4px 0 0;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .hero {
+    padding-top: calc(var(--header-h) + 52px);
+    padding-bottom: 54px;
+    gap: 28px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.3rem, 11vw, 3.25rem);
+  }
+
+  .hero-lead {
+    font-size: .9rem;
+  }
+
+  .about-layout,
+  .journey-grid,
+  .project-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-main {
+    grid-row: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .about-main .panel-icon {
+    margin-top: 0;
+  }
+
+  .skills-panel {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .content-section {
+    padding-block: 58px;
+  }
+
+  .footer-inner {
+    min-height: auto;
+    padding-block: 28px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .footer-meta {
+    align-items: flex-start;
+  }
+
+  .fab-tooltip {
+    display: none;
+  }
+}
+
+@media (max-width: 430px) {
+  .brand-copy small {
+    max-width: 155px;
+  }
+
+  .brand-copy strong {
+    font-size: .92rem;
+  }
+
+  .brand-mark {
+    width: 39px;
+    height: 39px;
+    flex-basis: 39px;
+  }
+
+  .eyebrow {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .hero h1 {
+    font-size: 2.35rem;
+  }
+
+  .profile-stamp {
+    padding: 18px;
+  }
+
+  .stamp-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .stamp-row strong {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .ai-fab {
+    right: 14px;
+    width: 58px;
+    height: 58px;
+  }
+
+  .fab-glow {
+    inset: 6px;
+  }
+
+  .fab-core {
+    inset: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+
+/* ── DEVZIKKY V2 interaction layer ─────────────────────────────── */
+.hero-note{max-width:650px;margin:19px 0 0;display:flex;gap:8px;color:var(--muted);font-size:.72rem}.hero-note span{color:var(--primary);font-family:"IBM Plex Mono",monospace}.hero-note b{color:var(--secondary)}
+.rotating-line{display:inline-block;min-width:4.3ch;color:var(--primary);text-shadow:0 0 28px rgba(139,23,182,.35);transition:color .3s ease,text-shadow .3s ease}.rotating-line.is-changing{animation:wordPop .34s ease}@keyframes wordPop{0%{opacity:.15;transform:translateY(6px);filter:blur(4px)}100%{opacity:1;transform:none;filter:blur(0)}}
+.status-dot{animation:statusPulse 1.5s ease-in-out infinite}@keyframes statusPulse{0%,100%{opacity:.65;transform:scale(.85)}50%{opacity:1;transform:scale(1.15)}}
+.identity-strip{margin-top:12px;padding:19px 21px;display:flex;align-items:center;justify-content:space-between;gap:20px;border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(110deg,rgba(139,23,182,.08),rgba(0,255,234,.025))}.identity-strip strong{display:block;max-width:560px;margin-top:5px;font:600 1rem "Space Grotesk",sans-serif}.identity-pills{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px}.identity-pills span{padding:5px 8px;border:1px solid rgba(0,255,234,.14);border-radius:7px;color:var(--secondary);background:rgba(255,255,255,.018);font:500 .58rem "IBM Plex Mono",monospace}
+.principle-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.principle-card{position:relative;min-width:0;min-height:215px;padding:21px;overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:rgba(14,22,30,.72);transition:.2s ease}.principle-card:hover{transform:translateY(-3px);border-color:rgba(0,255,234,.18);box-shadow:0 18px 42px rgba(0,0,0,.2),0 0 22px rgba(0,255,234,.06)}.principle-card>span{position:absolute;top:16px;right:17px;color:var(--primary);font:600 .6rem "IBM Plex Mono",monospace}.principle-card>i{display:block;margin-bottom:27px;color:var(--secondary);font-size:1.1rem}.principle-card h3{margin-bottom:7px;font-size:.94rem}.principle-card p{margin:0;color:var(--muted);font-size:.75rem}
+.manifesto{margin-top:13px;padding:24px;display:grid;grid-template-columns:55px minmax(0,1fr);gap:18px;align-items:center;border:1px solid rgba(139,23,182,.22);border-radius:var(--radius);background:radial-gradient(circle at 0 50%,rgba(139,23,182,.13),transparent 36%),rgba(14,22,30,.75)}.manifesto-mark{width:50px;height:50px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(135deg,var(--primary),var(--accent));font:700 1rem "Space Grotesk",sans-serif;box-shadow:0 0 24px var(--primary-glow)}.manifesto h3{margin:6px 0 4px;font-size:1.08rem}.manifesto p{margin:0;color:var(--muted);font-size:.76rem}
+.toolbox-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:13px}.toolbox-group{padding:20px;border:1px solid var(--line);border-radius:var(--radius);background:rgba(14,22,30,.72)}.toolbox-icon{width:38px;height:38px;display:grid;place-items:center;margin-bottom:12px;border-radius:10px;color:var(--secondary);background:var(--secondary-soft)}.toolbox-group h3{margin-bottom:11px;font-size:.92rem}.tag-cloud{display:flex;flex-wrap:wrap;gap:6px}.tag-cloud span{padding:5px 8px;border:1px solid var(--line);border-radius:7px;color:var(--muted);background:rgba(255,255,255,.018);font:500 .58rem "IBM Plex Mono",monospace}
+.button:active,.filter:active,.contact-card:active,.project-card:active{border-color:rgba(0,255,234,.5)!important;box-shadow:0 0 30px rgba(0,255,234,.17),inset 0 0 18px rgba(0,255,234,.035)!important}
+.ai-fab{animation:none}.fab-glow{animation:fabColorFlow 4s linear infinite}.fab-core{animation:fabCore 2.2s ease-in-out infinite}.fab-orbit{animation:orbitSpin linear infinite}.orbit-one{animation-duration:2.8s}.orbit-two{animation-duration:3.9s;animation-direction:reverse}.orbit-three{animation-duration:1.8s}@keyframes fabColorFlow{0%{filter:hue-rotate(0deg) saturate(1.1)}50%{filter:hue-rotate(80deg) saturate(1.45)}100%{filter:hue-rotate(0deg) saturate(1.1)}}@keyframes fabCore{0%,100%{box-shadow:inset 0 0 12px rgba(255,255,255,.04)}50%{box-shadow:inset 0 0 18px rgba(0,255,234,.16)}}@keyframes orbitSpin{to{transform:rotate(360deg)}}
+.tap-flash{position:fixed;width:22px;height:22px;z-index:999;pointer-events:none;border:1px solid var(--secondary);border-radius:50%;opacity:0;transform:translate(-50%,-50%) scale(.2)}.tap-flash.show{animation:tapFlash .48s ease-out}@keyframes tapFlash{0%{opacity:.9;transform:translate(-50%,-50%) scale(.2);box-shadow:0 0 0 rgba(0,255,234,0)}100%{opacity:0;transform:translate(-50%,-50%) scale(2.8);box-shadow:0 0 32px rgba(0,255,234,.3)}}
+@media(max-width:1050px){.principle-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){.identity-strip{align-items:flex-start;flex-direction:column}.identity-pills{justify-content:flex-start}.toolbox-grid{grid-template-columns:1fr}.principle-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:470px){.principle-grid{grid-template-columns:1fr}.manifesto{grid-template-columns:1fr}.hero-note{font-size:.68rem}}
+
+  </style>
+</head>
+
+<body>
+  <div class="page-grid" aria-hidden="true"></div>
+  <div class="ambient ambient-a" aria-hidden="true"></div>
+  <div class="ambient ambient-b" aria-hidden="true"></div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a class="brand" href="#home" aria-label="DEVZIKKY TECH home">
+        <span class="brand-mark">DZ</span>
+        <span class="brand-copy">
+          <strong>DEVZIKKY TECH</strong>
+          <small>DEVELOPER · BUILDER · LAGOS, NIGERIA</small>
+        </span>
+      </a>
+
+      <nav class="desktop-nav" id="mainNav" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#journey">Journey</a>
+        <a href="#projects">Projects</a>
+        <a href="#mindset">Mindset</a>
+        <a href="#contact">Contact</a>
+        <a href="https://devzikky.onrender.com" class="nav-cta" target="_blank" rel="noopener noreferrer">
+  <i class="fas fa-robot"></i>
+  Chat AI 🤖
+      </a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" type="button"
+              aria-label="Open navigation" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero section-shell">
+      <div class="hero-copy reveal">
+        <div class="eyebrow">
+          <span class="status-dot"></span>
+          <span>BUILDING THE NEXT BIG THING</span>
+          <span class="eyebrow-time" id="heroClock">--:--:-- WAT</span>
+        </div>
+
+        <h1>Software built with <span class="rotating-line" id="rotatingLine">intent.</span></h1>
+
+        <p class="hero-note"><span>|-»»</span> Do you know a fun fact 😅? Go To Google and Search<b>“who is DEVZIKKY”</b> and see what you find. 🔥</p>
+        
+        <p class="hero-lead">
+          I'm <strong>DEVZIKKY</strong>, the <span id="devAge">16</span>-year-old
+  developer behind DEVZIKKY TECH. I build web tools, APIs, AI projects,
+  automation and bots — learning by turning ideas into things people
+  can actually use.
+         </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="button button-primary">
+            <i class="fas fa-arrow-down"></i>
+            Explore projects
+          </a>
+          <a href="#about" class="button button-secondary">
+            <i class="fas fa-user"></i>
+            About me
+          </a>
+        </div>
+      </div>
+
+      <aside class="profile-stamp reveal" aria-label="Developer profile">
+        <div class="stamp-top">
+          <span class="mono stamp-label">DEVZIKKY TECH / PROFILE</span>
+          <span class="live-state"><span></span> ONLINE</span>
+        </div>
+
+        <div class="stamp-divider"></div>
+
+        <div class="stamp-rows">
+          <div class="stamp-row">
+            <span>Owner</span>
+            <strong>DEVZIKKY</strong>
+          </div>
+          <div class="stamp-row">
+            <span>Location</span>
+            <strong>Lagos, Nigeria</strong>
+          </div>
+          <div class="stamp-row">
+            <span>Local time</span>
+            <strong id="stampClock">--:--:-- WAT</strong>
+          </div>
+          <div class="stamp-row">
+            <span>Build environment</span>
+            <strong>Android · Termux</strong>
+          </div>
+          <div class="stamp-row">
+            <span>Main focus</span>
+            <strong>Web · APIs · AI · Bots</strong>
+          </div>
+          <div class="stamp-row">
+            <span>Profile</span>
+            <strong>14+ projects · 6+ bots</strong>
+          </div>
+          <div class="stamp-row">
+            <span>Known for</span>
+            <strong>Building from Android</strong>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="tech-rail" aria-label="Technology stack">
+      <div class="section-shell rail-inner">
+        <span>JavaScript</span>
+        <span>TypeScript</span>
+        <span>Node.js</span>
+        <span>Python</span>
+        <span>Express</span>
+        <span>REST APIs</span>
+        <span>Supabase</span>
+        <span>Firebase</span>
+        <span>Vercel</span>
+        <span>Render</span>
+        <span>Termux</span>
+      </div>
+    </section>
+
+    <section class="section-shell content-section" id="about">
+      <div class="section-heading reveal">
+        <span class="section-kicker">01 / ABOUT</span>
+        <h2>The person behind the projects.</h2>
+        <p>A more personal look at how DEVZIKKY TECH came together.</p>
+      </div>
+
+      <div class="about-layout">
+        <article class="feature-panel about-main reveal">
+          <div class="panel-icon"><i class="fas fa-user-astronaut"></i></div>
+          <div>
+            <h3>Who I am</h3>
+            <p>
+              I’m DEVZIKKY, a developer and builder based in Lagos, Nigeria.
+              DEVZIKKY TECH is where I bring together the things I experiment
+              with: websites, APIs, AI assistants, email tools, bots,
+              automation and developer utilities.
+            </p>
+            <p>
+              I’m especially interested in taking an annoying or missing
+              little thing and turning it into a working tool. Some projects
+              start small, some grow into full systems, and the process is
+              always part of the learning.
+            </p>
+          </div>
+        </article>
+
+        <article class="feature-panel about-side reveal">
+          <div class="panel-icon cyan"><i class="fas fa-mobile-screen-button"></i></div>
+          <h3>Built from a phone</h3>
+          <p>
+            A large part of my development workflow happens on Android with
+            Termux, Git, CLI tools and cloud deployments.
+          </p>
+          <div class="mini-list">
+            <span>Code</span>
+            <span>Test</span>
+            <span>Deploy</span>
+            <span>Debug</span>
+            <span>Repeat</span>
+          </div>
+        </article>
+
+        <article class="feature-panel about-side reveal">
+          <div class="panel-icon pink"><i class="fas fa-lightbulb"></i></div>
+          <h3>How I build</h3>
+          <p>
+            I prefer practical projects over unfinished ideas: build a first
+            version, test it in the real world, find what breaks, then improve
+            the experience.
+          </p>
+          <div class="mini-list">
+            <span>Useful</span>
+            <span>Simple</span>
+            <span>Fast</span>
+            <span>Reliable</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="identity-strip reveal">
+        <div>
+          <span class="section-kicker">KNOWN FOR</span>
+          <strong>Turning “what if?” into something you can actually open and use.</strong>
+        </div>
+        <div class="identity-pills">
+          <span>FULL-STACK</span><span>AI TINKERER</span><span>BOT BUILDER</span><span>API BUILDER</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell content-section" id="journey">
+      <div class="section-heading reveal">
+        <span class="section-kicker">02 / JOURNEY</span>
+        <h2>From experiments to an ecosystem.</h2>
+        <p>The work has expanded gradually across several areas of software.</p>
+      </div>
+
+      <div class="journey-grid">
+        <article class="journey-card reveal">
+          <span class="journey-number">01</span>
+          <h3>Start small</h3>
+          <p>
+            Early experiments focused on calculators, simple web tools and
+            learning the basics by actually making things.
+          </p>
+        </article>
+
+        <article class="journey-card reveal">
+          <span class="journey-number">02</span>
+          <h3>Learn the backend</h3>
+          <p>
+            JavaScript, Node.js, Express, Python, APIs, databases and
+            deployments became part of the workflow.
+          </p>
+        </article>
+
+        <article class="journey-card reveal">
+          <span class="journey-number">03</span>
+          <h3>Explore AI & bots</h3>
+          <p>
+            AI assistants, model integrations, TTS, WhatsApp and Telegram
+            automation opened up a much larger set of ideas.
+          </p>
+        </article>
+
+        <article class="journey-card reveal">
+          <span class="journey-number">04</span>
+          <h3>Build systems</h3>
+          <p>
+            Email infrastructure, public tools, APIs, dashboards and
+            multi-project workflows now form the wider DEVZIKKY ecosystem.
+          </p>
+        </article>
+      </div>
+
+      <div class="skills-panel reveal">
+        <div>
+          <span class="section-kicker">TOOLS I WORK WITH</span>
+          <h3>Technology & workflow</h3>
+        </div>
+        <div class="skill-cloud">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          <span>TypeScript</span><span>Node.js</span><span>Python</span>
+          <span>Express</span><span>REST</span><span>GraphQL</span>
+          <span>Supabase</span><span>Firebase</span><span>Git</span>
+          <span>GitHub</span><span>Vercel</span><span>Render</span>
+          <span>Netlify</span><span>Termux</span><span>AI / LLMs</span>
+          <span>Automation</span><span>Responsive UI</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell content-section" id="projects">
+      <div class="section-heading reveal">
+        <span class="section-kicker">03 / PROJECTS</span>
+        <h2>A selection of things I’ve built.</h2>
+        <p>Open a project, inspect its preview, or filter the collection.</p>
+      </div>
+
+      <div class="filter-bar reveal" role="group" aria-label="Project filters">
+        <button class="filter active" type="button" data-filter="ALL">All</button>
+        <button class="filter" type="button" data-filter="AI">AI</button>
+        <button class="filter" type="button" data-filter="EMAIL">Email</button>
+        <button class="filter" type="button" data-filter="UTILITY">Utility</button>
+        <button class="filter" type="button" data-filter="BOT">Bots</button>
+      </div>
+
+      <div class="project-grid" id="projectGrid"></div>
+    </section>
+
+    <section class="section-shell content-section" id="mindset">
+      <div class="section-heading reveal">
+        <span class="section-kicker">04 / MINDSET</span>
+        <h2>The developer with intent.</h2>
+        <p>The ideas behind the way the projects are built.</p>
+      </div>
+
+      <div class="principle-grid">
+        <article class="principle-card reveal"><span>01</span><i class="fas fa-wand-magic-sparkles"></i><h3>Make the idea real.</h3><p>An idea becomes interesting when someone can actually click it, use it, test it or break it.</p></article>
+        <article class="principle-card reveal"><span>02</span><i class="fas fa-bug-slash"></i><h3>Errors are data.</h3><p>Failed deployments and stubborn bugs become information about how the system really behaves.</p></article>
+        <article class="principle-card reveal"><span>03</span><i class="fas fa-layer-group"></i><h3>Learn by building.</h3><p>Each project becomes a practical lesson in APIs, sessions, auth, databases, deployment or UI.</p></article>
+        <article class="principle-card reveal"><span>04</span><i class="fas fa-heart"></i><h3>Useful beats impressive.</h3><p>The goal is a tool someone can actually use, not just a screenshot that looks good.</p></article>
+      </div>
+
+      <div class="manifesto reveal">
+        <div class="manifesto-mark">DZ</div>
+        <div><span class="section-kicker">THE LOOP</span><h3>Imagine → Build → Test → Break → Understand → Improve → Ship.</h3><p>No grand finish line. Just a better version of the thing than existed yesterday.</p></div>
+      </div>
+
+      <div class="toolbox-grid reveal">
+        <div class="toolbox-group"><span class="toolbox-icon"><i class="fas fa-code"></i></span><h3>Build</h3><div class="tag-cloud"><span>JavaScript</span><span>TypeScript</span><span>Node.js</span><span>Python</span><span>HTML/CSS</span><span>Express</span><span>REST</span><span>GraphQL</span></div></div>
+        <div class="toolbox-group"><span class="toolbox-icon"><i class="fas fa-brain"></i></span><h3>Think</h3><div class="tag-cloud"><span>AI / LLMs</span><span>Prompt Engineering</span><span>Model Orchestration</span><span>TTS / Voice AI</span><span>Automation</span></div></div>
+        <div class="toolbox-group"><span class="toolbox-icon"><i class="fas fa-server"></i></span><h3>Deploy</h3><div class="tag-cloud"><span>Vercel</span><span>Render</span><span>Netlify</span><span>Supabase</span><span>Firebase</span><span>GitHub</span><span>Termux</span></div></div>
+        <div class="toolbox-group"><span class="toolbox-icon"><i class="fas fa-shield-halved"></i></span><h3>Engineer</h3><div class="tag-cloud"><span>API Auth</span><span>Sessions</span><span>Rate Limiting</span><span>System Design</span><span>Custom Domains</span><span>CLI</span></div></div>
+      </div>
+    </section>
+
+    <section class="section-shell content-section" id="contact">
+      <div class="section-heading reveal">
+        <span class="section-kicker">04 / CONTACT</span>
+        <h2>Find the work. Reach the developer.</h2>
+        <p>Public links and project destinations in one place.</p>
+      </div>
+
+      <div class="contact-grid">
+        <a class="contact-card reveal" href="https://github.com/zikky0001-droid" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon"><i class="fab fa-github"></i></span>
+          <span><strong>GitHub</strong><small>zikky0001-droid</small></span>
+          <i class="fas fa-arrow-up-right-from-square contact-arrow"></i>
+        </a>
+
+        <a class="contact-card reveal" href="https://zikky-ai.xo.je" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon"><i class="fas fa-brain"></i></span>
+          <span><strong>ZIKKY AI</strong><small>zikky-ai.xo.je</small></span>
+          <i class="fas fa-arrow-up-right-from-square contact-arrow"></i>
+        </a>
+
+        <a class="contact-card reveal" href="https://zmail.zone.id" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+          <span><strong>ZMAIL Studio</strong><small>zmail.zone.id</small></span>
+          <i class="fas fa-arrow-up-right-from-square contact-arrow"></i>
+        </a>
+
+        <a class="contact-card reveal" href="https://zmaildrop.vercel.app" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon"><i class="fas fa-inbox"></i></span>
+          <span><strong>ZMAIL Drop</strong><small>zmaildrop.vercel.app</small></span>
+          <i class="fas fa-arrow-up-right-from-square contact-arrow"></i>
+        </a>
+
+        <a class="contact-card reveal" href="https://zikkymangahub.onrender.com" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon"><i class="fas fa-book-open"></i></span>
+          <span><strong>ZIKKY Manga Hub</strong><small>zikkymangahub.onrender.com</small></span>
+          <i class="fas fa-arrow-up-right-from-square contact-arrow"></i>
+        </a>
+
+        <a class="contact-card reveal" href="https://zquote-tau.vercel.app" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon"><i class="fas fa-quote-right"></i></span>
+          <span><strong>ZQUOTE</strong><small>zquote-tau.vercel.app</small></span>
+          <i class="fas fa-arrow-up-right-from-square contact-arrow"></i>
+        </a>
+
+        <a class="contact-card reveal" href="https://www.instagram.com/devzikky" target="_blank" rel="noopener noreferrer">
+          <span class="contact-icon"><i class="fab fa-instagram"></i></span>
+          <span><strong>Instagram</strong><small>@devzikky</small></span>
+          <i class="fas fa-arrow-up-right-from-square contact-arrow"></i>
+        </a>
+
+        <a class="contact-card reveal" href="mailto:zikkystar0001@gmail.com">
+          <span class="contact-icon"><i class="fas fa-at"></i></span>
+          <span><strong>Email</strong><small>zikkystar0001@gmail.com</small></span>
+          <i class="fas fa-arrow-up-right-from-square contact-arrow"></i>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-shell footer-inner">
+      <div>
+        <div class="footer-brand">DEVZIKKY TECH</div>
+        <p>Built from Lagos. Built by curiosity. Built to ship.</p>
+      </div>
+      <div class="footer-meta">
+        <span id="footerClock">--:--:-- WAT</span>
+        <span>© 2026 DEVZIKKY TECH</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="ai-fab" id="aiFab" type="button" aria-label="Open DEVZIKKY AI">
+    <span class="fab-orbit orbit-one"></span>
+    <span class="fab-orbit orbit-two"></span>
+    <span class="fab-glow"></span>
+    <span class="fab-core"><i class="fas fa-robot"></i></span>
+    <span class="fab-tooltip">Open DEVZIKKY AI</span>
+  </button>
+
+  <div class="preview-modal" id="previewModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head">
+        <strong id="modalTitle">Project preview</strong>
+        <button type="button" id="modalClose" aria-label="Close preview">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-image-wrap">
+        <img id="modalImage" src="icon.png" alt="">
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+const PROJECTS = [
+  {
+    tag: "TOOL",
+    filter: "UTILITY",
+    image: "ss-zquote.png",
+    name: "ZQUOTE",
+    description: "Telegram-style quote image API with username, message and optional avatar.",
+    url: "https://zquote-tau.vercel.app"
+  },
+  {
+    tag: "EMAIL SENDER API",
+    filter: "EMAIL",
+    image: "ss-zmail.png",
+    name: "ZMAIL Studio",
+    description: "Email workspace and API with templates, rich editing and live preview.",
+    url: "https://zmail.zone.id"
+  },
+  {
+    tag: "EMAIL INBOX API",
+    filter: "EMAIL",
+    image: "ss-zmaildrop.png",
+    name: "ZMAIL Drop",
+    description: "Public temporary mailbox designed for quick and simple inbox access.",
+    url: "https://zmaildrop.vercel.app"
+  },
+  {
+    tag: "EMAIL TEMP INBOX",
+    filter: "EMAIL",
+    image: "ss-zdropmail.png",
+    name: "ZDROPMAIL",
+    description: "Temporary inbox service with automatic expiry and a simple public interface.",
+    url: "https://zdropmail.vercel.app"
+  },
+  {
+    tag: "AI ASSISTANT",
+    filter: "AI",
+    image: "ss-ai.png",
+    name: "ZIKKY AI v1",
+    description: "AI assistant project with coding help, TTS and account-based features.",
+    url: "https://zikky-ai.xo.je"
+  },
+  {
+    tag: "AI",
+    filter: "AI",
+    image: "ss-ai2.png",
+    name: "ZIKKY AI v2",
+    description: "AI assistant experiment with multiple model providers and coding support.",
+    url: "https://zikkyai.onrender.com"
+  },
+  {
+    tag: "ANIME",
+    filter: "UTILITY",
+    image: "ss-manga.png",
+    name: "ZIKKY Manga Hub",
+    description: "Manga reader project with downloads, bookmarks and a mobile-first interface.",
+    url: "https://zikkymangahub.onrender.com"
+  },
+  {
+    tag: "UTILITY",
+    filter: "UTILITY",
+    image: "ss-cal.png",
+    name: "ZIKKY Calculator",
+    description: "Compact calculator project with a Matrix-inspired visual identity.",
+    url: "https://zikkycal.netlify.app"
+  },
+  {
+    tag: "BOT",
+    filter: "BOT",
+    image: "ss-tg.png",
+    name: "ZIKKY Telegram Bot",
+    description: "Telegram automation project combining utilities, AI and bot workflows.",
+    url: "https://t.me/zbot101bot"
+  },
+  {
+    tag: "UTILITY",
+    filter: "UTILITY",
+    image: "ss-yt.png",
+    name: "Phishing Edu",
+    description: "Security-awareness project focused on understanding phishing concepts.",
+    url: "https://zikkyphishing.netlify.app"
+  }
+];
+
+const nav = document.getElementById("mainNav");
+const menuToggle = document.getElementById("menuToggle");
+const projectGrid = document.getElementById("projectGrid");
+const previewModal = document.getElementById("previewModal");
+const modalImage = document.getElementById("modalImage");
+const modalTitle = document.getElementById("modalTitle");
+const modalClose = document.getElementById("modalClose");
+
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, (char) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  }[char]));
+}
+
+function escapeAttr(value) {
+  return escapeHTML(value);
+}
+
+function setMenu(open) {
+  nav.classList.toggle("open", open);
+  menuToggle.classList.toggle("active", open);
+  menuToggle.setAttribute("aria-expanded", String(open));
+  menuToggle.setAttribute(
+    "aria-label",
+    open ? "Close navigation" : "Open navigation"
+  );
+  document.body.classList.toggle("menu-open", open);
+}
+
+menuToggle.addEventListener("click", () => {
+  setMenu(!nav.classList.contains("open"));
+});
+
+nav.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => setMenu(false));
+});
+
+document.addEventListener("click", (event) => {
+  if (
+    nav.classList.contains("open") &&
+    !nav.contains(event.target) &&
+    !menuToggle.contains(event.target)
+  ) {
+    setMenu(false);
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    setMenu(false);
+    closePreview();
+  }
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 760) {
+    setMenu(false);
+  }
+});
+
+function updateWAT() {
+  const now = new Date();
+
+  const time = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Africa/Lagos",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false
+  }).format(now);
+
+  document.getElementById("heroClock").textContent = `${time} WAT`;
+  document.getElementById("stampClock").textContent = `${time} WAT`;
+  document.getElementById("footerClock").textContent = `${time} WAT`;
+}
+
+updateWAT();
+setInterval(updateWAT, 1000);
+
+function projectCard(project) {
+  return `
+    <article class="project-card reveal">
+      <div
+        class="project-image"
+        data-preview="${escapeAttr(project.image)}"
+        data-title="${escapeAttr(project.name)}"
+        tabindex="0"
+        role="button"
+        aria-label="Preview ${escapeAttr(project.name)}"
+      >
+        <img
+          src="${escapeAttr(project.image)}"
+          alt="${escapeAttr(project.name)} screenshot"
+          loading="lazy"
+        >
+
+        <div class="project-fallback">
+          <i class="fas fa-image"></i>
+          <strong>${escapeHTML(project.name)}</strong>
+          <small>Project preview unavailable</small>
+        </div>
+
+        <span class="project-tag">${escapeHTML(project.tag)}</span>
+      </div>
+
+      <div class="project-body">
+        <h3>${escapeHTML(project.name)}</h3>
+        <p>${escapeHTML(project.description)}</p>
+
+        <div class="project-actions">
+          <a
+            class="project-link"
+            href="${escapeAttr(project.url)}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit project
+            <i class="fas fa-arrow-right"></i>
+          </a>
+
+          <button
+            class="preview-link"
+            type="button"
+            data-preview="${escapeAttr(project.image)}"
+            data-title="${escapeAttr(project.name)}"
+          >
+            Preview
+          </button>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function renderProjects(filter = "ALL") {
+  const list = PROJECTS.filter(
+    (project) => filter === "ALL" || project.filter === filter
+  );
+
+  projectGrid.innerHTML = list.map(projectCard).join("");
+
+  projectGrid.querySelectorAll(".project-image img").forEach((image) => {
+    image.addEventListener("error", () => {
+      image.style.display = "none";
+      const fallback = image.parentElement.querySelector(".project-fallback");
+      if (fallback) {
+        fallback.style.display = "grid";
+      }
+    }, { once: true });
+  });
+
+  observeReveals();
+}
+
+renderProjects();
+
+document.querySelectorAll(".filter").forEach((button) => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll(".filter").forEach((item) => {
+      item.classList.remove("active");
+    });
+
+    button.classList.add("active");
+    renderProjects(button.dataset.filter);
+  });
+});
+
+function openPreview(image, title) {
+  if (!image) return;
+
+  modalImage.src = image;
+  modalImage.alt = `${title} preview`;
+  modalTitle.textContent = `${title} — preview`;
+  previewModal.classList.add("open");
+  previewModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("menu-open");
+  modalClose.focus();
+}
+
+function closePreview() {
+  if (!previewModal.classList.contains("open")) return;
+
+  previewModal.classList.remove("open");
+  previewModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("menu-open");
+  modalImage.src = "icon.png";
+}
+
+projectGrid.addEventListener("click", (event) => {
+  const target = event.target.closest("[data-preview]");
+  if (!target) return;
+
+  openPreview(target.dataset.preview, target.dataset.title);
+});
+
+projectGrid.addEventListener("keydown", (event) => {
+  if ((event.key === "Enter" || event.key === " ") &&
+      event.target.matches(".project-image")) {
+    event.preventDefault();
+    openPreview(event.target.dataset.preview, event.target.dataset.title);
+  }
+});
+
+modalClose.addEventListener("click", closePreview);
+
+previewModal.addEventListener("click", (event) => {
+  if (event.target.hasAttribute("data-close-modal")) {
+    closePreview();
+  }
+});
+
+const aiFab = document.getElementById("aiFab");
+
+function openAI() {
+  window.open("https://devzikky.onrender.com", "_blank", "noopener,noreferrer");
+}
+
+aiFab.addEventListener("click", openAI);
+
+aiFab.addEventListener("keydown", (event) => {
+  if (event.key === "Enter" || event.key === " ") {
+    event.preventDefault();
+    openAI();
+  }
+});
+
+function observeReveals() {
+  const elements = document.querySelectorAll(".reveal:not(.visible)");
+
+  if (!("IntersectionObserver" in window)) {
+    elements.forEach((element) => element.classList.add("visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries, currentObserver) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.add("visible");
+        currentObserver.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.08 }
+  );
+
+  elements.forEach((element) => observer.observe(element));
+}
+
+
+
+// ── Living hero headline ──────────────────────────────────────────
+const rotatingLine = document.getElementById("rotatingLine");
+const rotatingWords = [
+  "intent.", "purpose.", "curiosity.", "precision.", "ambition.",
+  "discipline.", "experiments.", "ideas.", "momentum.", "the real deal.",
+  "a reason.", "something useful.", "the next thing.", "late-night ideas.",
+  "constant learning.", "one build at a time."
+];
+const rotatingColors = ["#8b17b6", "#00ffea", "#ff2a6d", "#6d7cff", "#00d9ff", "#ff5f9e"];
+let rotatingIndex = 0;
+
+function rotateHeadline() {
+  if (!rotatingLine) return;
+  rotatingIndex = (rotatingIndex + 1) % rotatingWords.length;
+  const nextWord = rotatingWords[rotatingIndex];
+  const nextColor = rotatingColors[Math.floor(Math.random() * rotatingColors.length)];
+
+  rotatingLine.classList.remove("is-changing");
+  void rotatingLine.offsetWidth;
+  rotatingLine.textContent = nextWord;
+  rotatingLine.style.color = nextColor;
+  rotatingLine.style.textShadow = `0 0 28px ${nextColor}55`;
+  rotatingLine.classList.add("is-changing");
+}
+
+setInterval(rotateHeadline, 2600);
+
+// ── Tactile colour feedback for taps ──────────────────────────────
+const tapFlash = document.createElement("div");
+tapFlash.className = "tap-flash";
+document.body.appendChild(tapFlash);
+
+document.addEventListener("pointerdown", (event) => {
+  const target = event.target.closest(
+    "a, button, .project-card, .feature-panel, .principle-card, .toolbox-group, .timeline-item"
+  );
+  if (!target) return;
+
+  tapFlash.style.left = `${event.clientX}px`;
+  tapFlash.style.top = `${event.clientY}px`;
+  tapFlash.classList.remove("show");
+  void tapFlash.offsetWidth;
+  tapFlash.classList.add("show");
+});
+
+observeReveals();
+
+/* ── Auto-updating age ───────────────────────────────────────────
+ * Birthday: January 8, 2010 (Lagos, UTC+1).
+ * Age increments every year on January 8 at 01:00 WAT.
+ *
+ * Anchor: on 2010-01-08 01:00 WAT, age = 0.
+ * ──────────────────────────────────────────────────────────────*/
+(function updateAge() {
+  const LAGOS_OFFSET_MS = 60 * 60 * 1000; // UTC+1
+
+  // 2010-01-08 01:00 WAT  =  2010-01-08 00:00 UTC
+  const birthUtcMs = Date.UTC(2010, 0, 8, 0, 0, 0);
+
+  // Convert "now" into a Lagos-shifted UTC ms number so calendar
+  // arithmetic below behaves as if Lagos were the local timezone.
+  const nowLagosMs = Date.now() + LAGOS_OFFSET_MS;
+
+  let age = 0;
+  let anniversaryUtcMs = birthUtcMs;
+
+  while (true) {
+    // Advance to the next anniversary: same date/time, one year later.
+    const nextUtcDate = new Date(anniversaryUtcMs);
+    const nextYear = nextUtcDate.getUTCFullYear() + 1;
+    const candidateUtcMs = Date.UTC(nextYear, 0, 8, 0, 0, 0);
+
+    if (nowLagosMs >= candidateUtcMs) {
+      age += 1;
+      anniversaryUtcMs = candidateUtcMs;
+    } else {
+      break;
+    }
+
+    // Safety: prevent infinite loops if something is malformed.
+    if (age > 200) break;
+  }
+
+  const el = document.getElementById("devAge");
+  if (el) el.textContent = String(age);
+})();
+
+  </script>
+</body>
+</html>
+
