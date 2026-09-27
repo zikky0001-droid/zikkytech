@@ -395,7 +395,7 @@ Built and maintained by DEV ZIKKY — zikkytech.xo.je
 ---
 
 📬 Contact & Links
-
+```
 Platform Link
 🌐 Portfolio zikkytech.xo.je
 💻 GitHub github.com/zikky0001-droid
@@ -408,7 +408,7 @@ Platform Link
 💬 ZQUOTE zquote-tau.vercel.app
 📸 Instagram @devzikky
 ✉️ Email zikkystar0001@gmail.com
-
+```
 ---
 
 <div align="center">
