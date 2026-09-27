@@ -31,7 +31,7 @@ The complete catalogue of everything **DEV ZIKKY** builds — a lightweight stat
   <!-- Logo 1 -->
   <p align="center">
     <a href="https://zikkytech.xo.je">
-      <img alt="DEVZIKKY TECH" height="280" src="logo1.png" style="border-radius: 20px; border: 2px solid #8b7cff; box-shadow: 0 0 40px rgba(139,23,182,0.35);">
+      <img alt="DEVZIKKY TECH" height="480" src="logo1.png" style="border-radius: 20px; border: 2px solid #8b7cff; box-shadow: 0 0 40px rgba(139,23,182,0.35);">
     </a>
   </p>
 
@@ -49,7 +49,7 @@ The complete catalogue of everything **DEV ZIKKY** builds — a lightweight stat
 
   <!-- Logo 2 -->
   <p align="center">
-    <img src="logo2.png" alt="DEVZIKKY TECH Logo" width="160" style="border-radius: 50%; border: 3px solid #8b7cff; box-shadow: 0 0 40px rgba(139,23,182,0.4); margin: 16px;">
+    <img src="logo2.png" alt="DEVZIKKY TECH Logo" width="360" style="border-radius: 50%; border: 3px solid #8b7cff; box-shadow: 0 0 40px rgba(139,23,182,0.4); margin: 16px;">
   </p>
 
   <!-- Stats row -->
