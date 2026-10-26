@@ -1559,12 +1559,25 @@ h3 {
 .intro-network button, .intro-skip { border: 0; color: #00f5ff; background: transparent; text-decoration: underline; cursor: pointer; font: 600 .65rem "IBM Plex Mono", monospace; }
 .intro-skip { position: absolute; right: 22px; bottom: 20px; padding: 10px; text-decoration: none; }
 .intro-network[hidden], .video-center-play[hidden] { display: none !important; }
-.tap-flash { position: fixed; z-index: 999; width: 22px; height: 22px; pointer-events: none; border: 1px solid var(--secondary); border-radius: 50%; opacity: 0; transform: translate(-50%, -50%) scale(.2); }
+.tap-flash {
+  position: fixed;
+  z-index: 3000;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+  border: 2px solid var(--tap-color, var(--secondary));
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(.2);
+  mix-blend-mode: screen;
+  will-change: transform, opacity, box-shadow;
+}
 .tap-flash.show { animation: tapFlash 1.5s ease-out; }
 
 /* Theme -------------------------------------------------------------------- */
 :root { --neon-cyan: #00f5ff; --neon-violet: #9b5cff; --neon-pink: #ff4bd8; }
 body.light-theme {
+  --tap-color: #006dff;
   --text: #172238;
   --muted: #52627b;
   --line: rgba(46,75,120,.18);
@@ -1610,6 +1623,56 @@ body.light-theme .profile-stamp .stamp-row span,
 body.light-theme .profile-stamp .stamp-row strong { color: white; }
 body.light-theme .profile-stamp .stamp-label { color: #70d6ff; }
 body.light-theme .profile-stamp .stamp-divider { background-color: rgba(255,255,255,.25); }
+/* Light mode card system: blue-tech surfaces from the hero through Editing Lab. */
+body.light-theme .profile-stamp,
+body.light-theme .about-layout .feature-panel,
+body.light-theme .identity-strip,
+body.light-theme .journey-card,
+body.light-theme .skills-panel,
+body.light-theme .editor-layout,
+body.light-theme .media-card {
+  color: #fff;
+  background: linear-gradient(135deg, #071a3d 0%, #064a9e 52%, #0878d1 100%);
+  border-color: rgba(91,190,255,.72);
+  box-shadow: 0 14px 36px rgba(0,55,145,.24), 0 0 26px rgba(0,145,255,.16), inset 0 1px rgba(255,255,255,.16);
+}
+body.light-theme .identity-strip strong,
+body.light-theme .journey-card h3,
+body.light-theme .skills-panel h3,
+body.light-theme .editor-copy h3,
+body.light-theme .media-card-heading,
+body.light-theme .profile-stamp strong,
+body.light-theme .feature-panel h3 {
+  color: #fff;
+}
+body.light-theme .identity-strip .section-kicker,
+body.light-theme .journey-card p,
+body.light-theme .skills-panel .section-kicker,
+body.light-theme .editor-copy p,
+body.light-theme .media-card .media-status,
+body.light-theme .feature-panel p,
+body.light-theme .profile-stamp .stamp-row > span {
+  color: rgba(235,248,255,.84);
+}
+body.light-theme .identity-pills span,
+body.light-theme .skill-cloud span,
+body.light-theme .mini-list span {
+  color: #e8f9ff;
+  border-color: rgba(170,230,255,.38);
+  background: rgba(0,22,72,.24);
+}
+body.light-theme .editor-layout .glass-control,
+body.light-theme .media-card .glass-control {
+  color: #fff;
+  background: rgba(3,25,76,.34);
+  border-color: rgba(176,235,255,.52);
+}
+body.light-theme .gif-frame,
+body.light-theme .banner-frame,
+body.light-theme .video-shell {
+  border-color: rgba(166,232,255,.5);
+  background: rgba(2,20,63,.5);
+}
 
 /* Focus, motion and responsive refinements -------------------------------- */
 :focus-visible { outline: 3px solid var(--secondary); outline-offset: 3px; }
@@ -1978,7 +2041,7 @@ body.light-theme .profile-stamp .stamp-divider { background-color: rgba(255,255,
           <p class="media-status" id="videoStatus" role="status" aria-live="polite">🎥 Preparing Edit…</p>
         </div>
         <div class="video-shell">
-          <video id="showcaseVideo" class="showcase-video" src="video.mp4" loop muted playsinline preload="metadata" aria-label="DEVZIKKY video editing showcase"></video>
+          <video id="showcaseVideo" class="showcase-video" src="video.mp4" loop playsinline preload="metadata" aria-label="DEVZIKKY video editing showcase"></video>
           <div class="video-overlay"><span>🎞️ DEVZIKKY EDITS</span><span class="video-live"><i></i> PLAY MODE</span></div>
           <button class="video-center-play" id="videoCenterPlay" type="button" aria-label="Play showcase video">▶️️</button>
         </div>
@@ -2319,6 +2382,19 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matc
  const paint=()=>{const playing=!video.paused&&!video.ended;fab.innerHTML=playing?'⏸️ <span>PAUSE SHOWCASE</span>':'▶️ <span>RESUME PLAYING</span>';fab.setAttribute('aria-pressed',String(!playing));fab.setAttribute('aria-label',playing?'Pause showcase video':'Resume showcase video');center.hidden=playing;};
  const play=async()=>{userPaused=false;try{await video.play();status.textContent='🎬 Video playing enabled 🔥';}catch(err){status.textContent=video.error?'⚠️ VIDEO UNAVAILABLE — check that video.mp4 is available 😱':'🔊 Tap play to allow video and audio playback in this browser.';center.hidden=false;}paint();};
  const pause=()=>{userPaused=true;video.pause();paint();status.textContent='⏸️ Showcase paused by you.';};
+ const unlockAudio=(event)=>{
+  if(userPaused || event?.target?.closest?.('#videoFab, #videoCenterPlay'))return;
+  video.muted=false;
+  video.volume=1;
+  video.play().then(()=>{
+   status.textContent='🔊 Showcase audio enabled — looping playback active.';
+   paint();
+  }).catch(()=>{
+   status.textContent='🔊 Tap the play button to enable showcase audio.';
+   paint();
+  });
+ };
+ window.addEventListener('pointerdown',unlockAudio,{once:true,passive:true});
  fab.addEventListener('click',()=>video.paused?play():pause());center?.addEventListener('click',play);
  video.addEventListener('play',paint);video.addEventListener('pause',paint);
  video.addEventListener('waiting',()=>{if(!userPaused)status.textContent='⏳ Buffering the showcase…';});
@@ -2688,18 +2764,13 @@ tapFlash.className = "tap-flash";
 document.body.appendChild(tapFlash);
 
 document.addEventListener("pointerdown", (event) => {
-  const node = event.target instanceof Element ? event.target : event.target.parentElement;
-  const target = node?.closest(
-    "a, button, [role=button], .project-card, .feature-panel, .principle-card, .toolbox-group, .timeline-item, .filter, .glass-control, .history-card"
-  );
-  if (!target) return;
-
+  if (event.pointerType === "mouse" && event.button !== 0) return;
   tapFlash.style.left = `${event.clientX}px`;
   tapFlash.style.top = `${event.clientY}px`;
   tapFlash.classList.remove("show");
   void tapFlash.offsetWidth;
   tapFlash.classList.add("show");
-});
+}, { passive: true });
 
 observeReveals();
 
