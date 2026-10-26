@@ -1365,7 +1365,7 @@ h3 {
 .toolbox-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:13px}.toolbox-group{padding:20px;border:1px solid var(--line);border-radius:var(--radius);background:rgba(14,22,30,.72)}.toolbox-icon{width:38px;height:38px;display:grid;place-items:center;margin-bottom:12px;border-radius:10px;color:var(--secondary);background:var(--secondary-soft)}.toolbox-group h3{margin-bottom:11px;font-size:.92rem}.tag-cloud{display:flex;flex-wrap:wrap;gap:6px}.tag-cloud span{padding:5px 8px;border:1px solid var(--line);border-radius:7px;color:var(--muted);background:rgba(255,255,255,.018);font:500 .58rem "IBM Plex Mono",monospace}
 .button:active,.filter:active,.contact-card:active,.project-card:active{border-color:rgba(0,255,234,.5)!important;box-shadow:0 0 30px rgba(0,255,234,.17),inset 0 0 18px rgba(0,255,234,.035)!important}
 .ai-fab{animation:none}.fab-glow{animation:fabColorFlow 4s linear infinite}.fab-core{animation:fabCore 2.2s ease-in-out infinite}.fab-orbit{animation:orbitSpin linear infinite}.orbit-one{animation-duration:2.8s}.orbit-two{animation-duration:3.9s;animation-direction:reverse}.orbit-three{animation-duration:1.8s}@keyframes fabColorFlow{0%{filter:hue-rotate(0deg) saturate(1.1)}50%{filter:hue-rotate(80deg) saturate(1.45)}100%{filter:hue-rotate(0deg) saturate(1.1)}}@keyframes fabCore{0%,100%{box-shadow:inset 0 0 12px rgba(255,255,255,.04)}50%{box-shadow:inset 0 0 18px rgba(0,255,234,.16)}}@keyframes orbitSpin{to{transform:rotate(360deg)}}
-.tap-flash{position:fixed;width:22px;height:22px;z-index:999;pointer-events:none;border:1px solid var(--secondary);border-radius:50%;opacity:0;transform:translate(-50%,-50%) scale(.2)}.tap-flash.show{animation:tapFlash .48s ease-out}@keyframes tapFlash{0%{opacity:.9;transform:translate(-50%,-50%) scale(.2);box-shadow:0 0 0 rgba(0,255,234,0)}100%{opacity:0;transform:translate(-50%,-50%) scale(2.8);box-shadow:0 0 32px rgba(0,255,234,.3)}}
+.tap-flash{position:fixed;width:22px;height:22px;z-index:999;pointer-events:none;border:1px solid var(--secondary);border-radius:50%;opacity:0;transform:translate(-50%,-50%) scale(.2)}.tap-flash.show{animation:tapFlash 1.5s ease-out}@keyframes tapFlash{0%{opacity:.9;transform:translate(-50%,-50%) scale(.2);box-shadow:0 0 0 rgba(0,255,234,0)}100%{opacity:0;transform:translate(-50%,-50%) scale(2.8);box-shadow:0 0 32px rgba(0,255,234,.3)}}
 @media(max-width:1050px){.principle-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:760px){.identity-strip{align-items:flex-start;flex-direction:column}.identity-pills{justify-content:flex-start}.toolbox-grid{grid-template-columns:1fr}.principle-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:470px){.principle-grid{grid-template-columns:1fr}.manifesto{grid-template-columns:1fr}.hero-note{font-size:.68rem}}
@@ -1430,7 +1430,9 @@ body.light-theme .banner-frame,body.light-theme .gif-frame,body.light-theme .vid
 body.light-theme .video-fab{background:rgba(255,255,255,.96);color:#172238;border-color:rgba(0,160,190,.4)}
 body.light-theme .desktop-nav.nav-open,body.light-theme .desktop-nav.open{background:rgba(248,251,255,.98);border-color:rgba(72,105,160,.25)}
 body.light-theme .desktop-nav a:hover{background:rgba(0,190,210,.09)}
+
 /* Desktop chat CTA should sit in navigation, not hang over the header. */
+
 @media(min-width:761px){.desktop-nav{position:static;transform:none;opacity:1;visibility:visible;pointer-events:auto;flex-direction:row;align-items:center;background:transparent;border:0;padding:0;gap:clamp(8px,1.2vw,18px)}.desktop-nav .nav-cta{position:static;display:inline-flex;align-items:center;justify-content:center;width:auto;max-width:145px;padding:10px 13px;border-radius:12px;white-space:normal;box-shadow:0 8px 24px rgba(255,42,109,.2)}}
 @media(max-width:760px){
  .header-inner{width:calc(100% - 22px);gap:8px}
@@ -1492,7 +1494,7 @@ body.light-theme .desktop-nav a:hover{background:rgba(0,190,210,.09)}
         <a href="#contact">Contact</a>
         <a href="https://devzikky.onrender.com" class="nav-cta" target="_blank" rel="noopener noreferrer">
   <i class="fas fa-robot"></i>
-  Chat AI 🤖
+ Chat AI
       </a>
       </nav>
 
@@ -1589,6 +1591,8 @@ body.light-theme .desktop-nav a:hover{background:rgba(0,190,210,.09)}
         <span>Firebase</span>
         <span>Vercel</span>
         <span>Render</span>
+        <span>Infinityfree</span>
+        <span>Netlify</span>
         <span>Termux</span>
       </div>
     </section>
@@ -1624,7 +1628,7 @@ body.light-theme .desktop-nav a:hover{background:rgba(0,190,210,.09)}
           <div class="panel-icon cyan"><i class="fas fa-mobile-screen-button"></i></div>
           <h3>Built from a phone</h3>
           <p>
-            A large part of my development workflow happens on Android with
+            A large part of my development workflow happens on my system with
             Termux, Git, CLI tools and cloud deployments.
           </p>
           <div class="mini-list">
@@ -1738,7 +1742,7 @@ body.light-theme .desktop-nav a:hover{background:rgba(0,190,210,.09)}
           <h3>From lines of code to frames that hit different. 🚀</h3>
           <p>Explore my creative side, then connect with me across my platforms.</p>
           <div class="social-links">
-            <a class="glass-control social-youtube" href="https://m.youtube.com/@devzikky" target="_blank" rel="noopener noreferrer">▶️ YouTube</a>
+            <a class="glass-control social-youtube" href="https://m.youtube.com/@devzikky" target="_blank" rel="noopener noreferrer">▶️️ YouTube</a>
             <a class="glass-control social-instagram" href="https://www.instagram.com/devzikky" target="_blank" rel="noopener noreferrer">📸 Instagram</a>
             <a class="glass-control social-tiktok" href="https://www.tiktok.com/@devzikky" target="_blank" rel="noopener noreferrer">🎵 TikTok</a>
           </div>
@@ -1746,8 +1750,8 @@ body.light-theme .desktop-nav a:hover{background:rgba(0,190,210,.09)}
         </div>
         <div class="video-shell">
           <video id="showcaseVideo" class="showcase-video" src="video.mp4" loop playsinline preload="metadata" aria-label="DEVZIKKY video editing showcase"></video>
-          <div class="video-overlay"><span>🎞️ DEVZIKKY EDITS</span><span class="video-live"><i></i> LOOP MODE</span></div>
-          <button class="video-center-play" id="videoCenterPlay" type="button" aria-label="Play showcase video">▶</button>
+          <div class="video-overlay"><span>🎞️ DEVZIKKY EDITS</span><span class="video-live"><i></i> PLAY MODE</span></div>
+          <button class="video-center-play" id="videoCenterPlay" type="button" aria-label="Play showcase video">▶️️</button>
         </div>
       </div>
     </section>
@@ -1760,16 +1764,16 @@ body.light-theme .desktop-nav a:hover{background:rgba(0,190,210,.09)}
       </div>
       <div class="history-wrap reveal">
         <div class="history-track" id="historyTrack" aria-live="polite"></div>
-        <div class="history-controls"><button class="glass-control" id="historyPrev" type="button" aria-label="Previous project">← PREVIOUS</button><span id="historyCounter">01 / 01</span><button class="glass-control" id="historyNext" type="button" aria-label="Next project">NEXT →</button></div>
+        <div class="history-controls"><button class="glass-control" id="historyPrev" type="button" aria-label="Previous project">⬅️ PREVIOUS</button><span id="historyCounter">01 / 01</span><button class="glass-control" id="historyNext" type="button" aria-label="Next project">NEXT ➡️</button></div>
         <div class="history-dots" id="historyDots" aria-label="Choose project"></div>
       </div>
     </section>
 
     <section class="section-shell content-section" id="media-gallery">
-      <div class="section-heading reveal"><span class="section-kicker">🪄 MOTION LAB</span><h2>Little loops. Big energy. ⚡</h2><p>Separate playback controls for each visual asset.</p></div>
+      <div class="section-heading reveal"><span class="section-kicker">🪄 EDITING LAB 🎬</span><h2>From small clips to « <strong>Big creativity</strong> »⚡</h2><p>My <strong>Separate</strong> life from ⭕ coding is being an <strong>EDITOR</strong>🔥 </p></div>
       <div class="media-grid">
-        <article class="media-card glass-panel reveal"><div class="media-card-heading"><span>🎞️ LOOPING GIF</span><span class="media-badge">OUTRO</span></div><div class="gif-frame"><img id="outroGif" src="outro.gif" alt="DEVZIKKY animated outro" loading="lazy"></div><button class="glass-control media-toggle" id="gifToggle" type="button" aria-pressed="false">Ⅱ PAUSE GIF</button><p class="media-status" id="gifStatus" role="status">✨ Looping animation</p></article>
-        <article class="media-card glass-panel reveal"><div class="media-card-heading"><span>🖼️ SVG BANNER</span><span class="media-badge">VISUAL</span></div><div class="banner-frame"><object id="bannerObject" data="banner.svg" type="image/svg+xml" aria-label="DEVZIKKY animated SVG banner"></object><img id="bannerFallback" src="banner.svg" alt="DEVZIKKY banner" hidden></div><button class="glass-control media-toggle" id="bannerToggle" type="button" aria-pressed="false">Ⅱ PAUSE BANNER</button><p class="media-status" id="bannerStatus" role="status">💫 Banner ready</p></article>
+        <article class="media-card glass-panel reveal"><div class="media-card-heading"><span>🎞️ ONE PIECE EDIT</span><span class="media-badge">OUTRO</span></div><div class="gif-frame"><img id="outroGif" src="outro.gif" alt="DEVZIKKY animated outro" loading="lazy"></div><button class="glass-control media-toggle" id="gifToggle" type="button" aria-pressed="false">Ⅱ PAUSE GIF</button><p class="media-status" id="gifStatus" role="status">✨ EDIT OF MY FAVOURITE ANIME 😊</p></article>
+        <article class="media-card glass-panel reveal"><div class="media-card-heading"><span>🖼️ ICON BANNER</span><span class="media-badge">VISUAL</span></div><div class="banner-frame"><object id="bannerObject" data="banner.svg" type="image/svg+xml" aria-label="DEVZIKKY animated SVG banner"></object><img id="bannerFallback" src="banner.svg" alt="DEVZIKKY banner" hidden></div><button class="glass-control media-toggle" id="bannerToggle" type="button" aria-pressed="false">Ⅱ PAUSE BANNER</button><p class="media-status" id="bannerStatus" role="status">💫 Banner ready</p></article>
       </div>
     </section>
 
@@ -1939,8 +1943,8 @@ body.light-theme .desktop-nav a:hover{background:rgba(0,190,210,.09)}
     <div class="intro-brand">DEVZIKKY <span>TECH</span></div><p class="intro-tagline">A DEVELOPER. AN EDITOR. A CREATOR. 🚀</p>
     <p class="intro-message" id="introMessage">PREPARING THE EXTRAORDINARY…</p>
     <div class="intro-progress"><span id="introProgressFill"></span></div><div class="intro-progress-meta"><span id="introProgressText">INITIALIZING</span><strong id="introPercent">0%</strong></div>
-    <p class="intro-network" id="introNetwork" hidden>⚠️ SOME RESOURCES ARE TAKING LONGER THAN EXPECTED. <button type="button" id="introContinue">CONTINUE ANYWAY ↗</button></p>
-    <button class="intro-skip" id="introSkip" type="button">SKIP INTRO ↗</button>
+    <p class="intro-network" id="introNetwork" hidden>⚠️ SOME RESOURCES ARE TAKING LONGER THAN EXPECTED. <button type="button" id="introContinue">CONTINUE ANYWAY ↗️</button></p>
+    <button class="intro-skip" id="introSkip" type="button">SKIP INTRO ↗️</button>
   </div>
 
   <script>
@@ -2083,7 +2087,7 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matc
 (function initShowcaseVideo(){
  const video=$('showcaseVideo'),fab=$('videoFab'),center=$('videoCenterPlay'),status=$('videoStatus');if(!video||!fab)return;
  let userPaused=false;
- const paint=()=>{const playing=!video.paused&&!video.ended;fab.innerHTML=playing?'Ⅱ <span>PAUSE SHOWCASE</span>':'▶ <span>RESUME SHOWCASE</span>';fab.setAttribute('aria-pressed',String(!playing));fab.setAttribute('aria-label',playing?'Pause showcase video':'Resume showcase video');center.hidden=playing;};
+ const paint=()=>{const playing=!video.paused&&!video.ended;fab.innerHTML=playing?'Ⅱ <span>PAUSE SHOWCASE</span>':'▶️ <span>RESUME SHOWCASE</span>';fab.setAttribute('aria-pressed',String(!playing));fab.setAttribute('aria-label',playing?'Pause showcase video':'Resume showcase video');center.hidden=playing;};
  const play=async()=>{userPaused=false;try{await video.play();status.textContent='🎬 Showcase playing — looping enabled.';}catch(err){status.textContent=video.error?'⚠️ VIDEO UNAVAILABLE — check that video.mp4 is beside index.html.':'🔊 Tap play to allow video and audio playback in this browser.';center.hidden=false;}paint();};
  const pause=()=>{userPaused=true;video.pause();paint();status.textContent='⏸️ Showcase paused by you.';};
  fab.addEventListener('click',()=>video.paused?play():pause());center?.addEventListener('click',play);
@@ -2105,7 +2109,7 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matc
    try{const c=document.createElement('canvas');c.width=img.naturalWidth||640;c.height=img.naturalHeight||360;c.getContext('2d').drawImage(img,0,0,c.width,c.height);frameUrl=c.toDataURL('image/png');img.src=frameUrl;status.textContent='⏸️ GIF paused.';}
    catch{status.textContent='ℹ️ This browser could not freeze the GIF frame; playback may continue.';paused=false;}
   }else{if(frameUrl){img.src='outro.gif';frameUrl=null;}status.textContent='✨ GIF looping.';}
-  btn.innerHTML=paused?'▶ PLAY GIF':'Ⅱ PAUSE GIF';btn.setAttribute('aria-pressed',String(paused));
+  btn.innerHTML=paused?'▶️ PLAY GIF':'Ⅱ PAUSE GIF';btn.setAttribute('aria-pressed',String(paused));
  };
  btn.addEventListener('click',()=>setPaused(!paused));img.addEventListener('error',()=>{status.textContent='⚠️ GIF UNAVAILABLE — check that outro.gif is beside index.html.';btn.disabled=true;});
 })();
@@ -2118,7 +2122,7 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matc
   try{const doc=obj.contentDocument;if(doc){doc.documentElement.style.animationPlayState=paused?'paused':'running';doc.querySelectorAll('*').forEach(el=>{el.style.animationPlayState=paused?'paused':'running';el.style.webkitAnimationPlayState=paused?'paused':'running';});const svg=doc.documentElement;if(svg.pauseAnimations&&svg.unpauseAnimations){paused?svg.pauseAnimations():svg.unpauseAnimations();}}}catch{}
   // CSS animation pause can be applied to the embedded object's element itself.
   obj.style.animationPlayState=paused?'paused':'running';obj.style.filter=paused?'saturate(.65)':'none';
-  btn.innerHTML=paused?'▶ PLAY BANNER':'Ⅱ PAUSE BANNER';btn.setAttribute('aria-pressed',String(paused));status.textContent=paused?'⏸️ Banner paused where supported.':'💫 Banner animation enabled.';
+  btn.innerHTML=paused?'▶️ PLAY BANNER':'Ⅱ PAUSE BANNER';btn.setAttribute('aria-pressed',String(paused));status.textContent=paused?'⏸️ Banner paused where supported.':'💫 Banner animation enabled.';
  };
  btn.addEventListener('click',()=>{paused=!paused;apply();});obj.addEventListener('error',()=>{obj.hidden=true;fallback.hidden=false;status.textContent='⚠️ Banner loaded as a static image; embedded animation controls may be limited.';});
  obj.addEventListener('load',()=>{if(paused)apply();});
@@ -2431,8 +2435,9 @@ tapFlash.className = "tap-flash";
 document.body.appendChild(tapFlash);
 
 document.addEventListener("pointerdown", (event) => {
-  const target = event.target.closest(
-    "a, button, .project-card, .feature-panel, .principle-card, .toolbox-group, .timeline-item"
+  const node = event.target instanceof Element ? event.target : event.target.parentElement;
+  const target = node?.closest(
+    "a, button, [role=button], .project-card, .feature-panel, .principle-card, .toolbox-group, .timeline-item, .filter, .glass-control, .history-card"
   );
   if (!target) return;
 
@@ -2489,3 +2494,47 @@ observeReveals();
 </body>
 </html>
 
+
+
+/* ── Final polish: blue About cards + gold text + restored tap pulse ── */
+.about-layout .feature-panel.about-side{
+  position:relative;
+  isolation:isolate;
+  color:#ffe2a0;
+  background:linear-gradient(135deg,rgba(10,65,135,.96),rgba(13,31,79,.96) 58%,rgba(24,36,94,.94));
+  border:1px solid rgba(72,174,255,.48);
+  box-shadow:0 12px 34px rgba(0,78,190,.2),inset 0 1px rgba(255,255,255,.12),0 0 24px rgba(0,157,255,.08);
+}
+.about-layout .feature-panel.about-side::before{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(circle at 90% 0%,rgba(0,245,255,.17),transparent 38%),linear-gradient(110deg,transparent,rgba(255,196,76,.035),transparent);
+}
+.about-layout .feature-panel.about-side h3,
+.about-layout .feature-panel.about-side p,
+.about-layout .feature-panel.about-side .mini-list span,
+.about-layout .feature-panel.about-side .panel-icon,
+.about-layout .feature-panel.about-side .panel-icon i{
+  color:#ffd27a;
+  animation:aboutGoldShift 2s ease-in-out infinite alternate;
+  text-shadow:0 0 12px rgba(255,184,56,.13);
+}
+.about-layout .feature-panel.about-side p{color:#ffe8b6;}
+.about-layout .feature-panel.about-side .mini-list span{
+  background:rgba(3,15,42,.42);border-color:rgba(255,204,102,.35);color:#ffd27a;
+}
+.about-layout .feature-panel.about-side .panel-icon{
+  background:linear-gradient(135deg,rgba(0,204,255,.22),rgba(255,184,56,.15));
+  border:1px solid rgba(255,204,102,.3);
+}
+@keyframes aboutGoldShift{
+  0%{color:#ffb84d;text-shadow:0 0 7px rgba(255,184,77,.12)}
+  100%{color:#ffe7a3;text-shadow:0 0 16px rgba(255,204,102,.32)}
+}
+.tap-flash{width:24px;height:24px;border:1.5px solid var(--secondary,#00f5ff);box-shadow:0 0 12px rgba(0,245,255,.18);will-change:transform,opacity}
+.tap-flash.show{animation:tapFlash 1.5s cubic-bezier(.16,.75,.25,1) forwards}
+@keyframes tapFlash{
+  0%{opacity:.95;transform:translate(-50%,-50%) scale(.2);box-shadow:0 0 0 rgba(0,245,255,0)}
+  35%{opacity:.75;box-shadow:0 0 18px rgba(0,245,255,.28)}
+  100%{opacity:0;transform:translate(-50%,-50%) scale(3.2);box-shadow:0 0 34px rgba(0,245,255,.08)}
+}
+@media(prefers-reduced-motion:reduce){.about-layout .feature-panel.about-side h3,.about-layout .feature-panel.about-side p,.about-layout .feature-panel.about-side .mini-list span,.about-layout .feature-panel.about-side .panel-icon,.about-layout .feature-panel.about-side .panel-icon i{animation:none}}
