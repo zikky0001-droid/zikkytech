@@ -1365,13 +1365,13 @@ h3 {
 .toolbox-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:13px}.toolbox-group{padding:20px;border:1px solid var(--line);border-radius:var(--radius);background:rgba(14,22,30,.72)}.toolbox-icon{width:38px;height:38px;display:grid;place-items:center;margin-bottom:12px;border-radius:10px;color:var(--secondary);background:var(--secondary-soft)}.toolbox-group h3{margin-bottom:11px;font-size:.92rem}.tag-cloud{display:flex;flex-wrap:wrap;gap:6px}.tag-cloud span{padding:5px 8px;border:1px solid var(--line);border-radius:7px;color:var(--muted);background:rgba(255,255,255,.018);font:500 .58rem "IBM Plex Mono",monospace}
 .button:active,.filter:active,.contact-card:active,.project-card:active{border-color:rgba(0,255,234,.5)!important;box-shadow:0 0 30px rgba(0,255,234,.17),inset 0 0 18px rgba(0,255,234,.035)!important}
 .ai-fab{animation:none}.fab-glow{animation:fabColorFlow 4s linear infinite}.fab-core{animation:fabCore 2.2s ease-in-out infinite}.fab-orbit{animation:orbitSpin linear infinite}.orbit-one{animation-duration:2.8s}.orbit-two{animation-duration:3.9s;animation-direction:reverse}.orbit-three{animation-duration:1.8s}@keyframes fabColorFlow{0%{filter:hue-rotate(0deg) saturate(1.1)}50%{filter:hue-rotate(80deg) saturate(1.45)}100%{filter:hue-rotate(0deg) saturate(1.1)}}@keyframes fabCore{0%,100%{box-shadow:inset 0 0 12px rgba(255,255,255,.04)}50%{box-shadow:inset 0 0 18px rgba(0,255,234,.16)}}@keyframes orbitSpin{to{transform:rotate(360deg)}}
-.tap-flash{position:fixed;width:22px;height:22px;z-index:999;pointer-events:none;border:1px solid var(--secondary);border-radius:50%;opacity:0;transform:translate(-50%,-50%) scale(.2)}.tap-flash.show{animation:tapFlash .48s ease-out}@keyframes tapFlash{0%{opacity:.9;transform:translate(-50%,-50%) scale(.2);box-shadow:0 0 0 rgba(0,255,234,0)}100%{opacity:0;transform:translate(-50%,-50%) scale(2.8);box-shadow:0 0 32px rgba(0,255,234,.3)}}
+.tap-flash{position:fixed;width:22px;height:22px;z-index:999;pointer-events:none;border:1px solid var(--secondary);border-radius:50%;opacity:0;transform:translate(-50%,-50%) scale(.2)}.tap-flash.show{animation:tapFlash 2s ease-out}@keyframes tapFlash{0%{opacity:.9;transform:translate(-50%,-50%) scale(.2);box-shadow:0 0 0 rgba(0,255,234,0)}100%{opacity:0;transform:translate(-50%,-50%) scale(2.8);box-shadow:0 0 32px rgba(0,255,234,.3)}}
 @media(max-width:1050px){.principle-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:760px){.identity-strip{align-items:flex-start;flex-direction:column}.identity-pills{justify-content:flex-start}.toolbox-grid{grid-template-columns:1fr}.principle-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:470px){.principle-grid{grid-template-columns:1fr}.manifesto{grid-template-columns:1fr}.hero-note{font-size:.68rem}}
 
 
-@media(max-width:760px){.desktop-nav.nav-open{display:flex;position:absolute;top:100%;left:12px;right:12px;flex-direction:column;align-items:stretch;padding:14px;border:1px solid var(--glass-line);border-radius:16px;background:rgba(5,9,18,.96);backdrop-filter:blur(24px);z-index:1000}.desktop-nav.nav-open a{padding:12px}.site-header .header-inner{position:relative}}
+@media(max-width:760px){.desktop-nav.nav-open,.desktop-nav.open{display:flex;position:absolute;top:100%;left:12px;right:12px;flex-direction:column;align-items:stretch;padding:14px;border:1px solid var(--glass-line);border-radius:16px;background:rgba(5,9,18,.96);backdrop-filter:blur(24px);z-index:1000}.desktop-nav.nav-open a{padding:12px}.site-header .header-inner{position:relative}}
 /* ── DEVZIKKY cosmic glass upgrade ─────────────────────────────── */
 :root{--neon-cyan:#00f5ff;--neon-violet:#9b5cff;--neon-pink:#ff4bd8;--glass-bg:rgba(13,20,36,.58);--glass-line:rgba(120,210,255,.23)}
 body{background-image:radial-gradient(ellipse at 12% 12%,rgba(0,245,255,.075),transparent 34%),radial-gradient(ellipse at 85% 35%,rgba(155,92,255,.11),transparent 36%),radial-gradient(ellipse at 50% 90%,rgba(255,75,216,.055),transparent 38%)}
@@ -1392,7 +1392,59 @@ body.light-theme{--text:#172238;--muted:#58677f;--line:rgba(55,91,140,.2);backgr
 @media(max-width:430px){.history-track{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.history-card{padding:9px;min-height:255px;border-radius:14px}.history-card.side{filter:blur(1px);opacity:.48}.history-card h3{font-size:.76rem}.history-card p{font-size:.65rem}.history-card-visual{height:55px;font-size:1.4rem}.history-card .history-link{font-size:.62rem}.history-controls{gap:8px}.history-controls .glass-control{padding:8px;font-size:.57rem}.intro-tagline{letter-spacing:.07em}.video-fab span{max-width:100px}}
 @media(prefers-reduced-motion:reduce){.intro-stars,.atom-core,.atom-ring,.atom-ring i,.status-dot,.fab-glow,.fab-core,.fab-orbit{animation:none!important}.intro-screen,.history-card,.glass-control{transition:none!important}html{scroll-behavior:auto!important}}
 
-  </style>
+  
+/* ── Responsive polish pass: theme contrast, media sizing, history carousel ── */
+html,body{max-width:100%;overflow-x:clip}
+img,video,svg,object{max-width:100%}
+.glass-control{color:var(--text,#f5f7ff)}
+.banner-frame{height:auto;aspect-ratio:900/160;min-height:100px;max-height:300px;padding:0;background:#030711}
+.banner-frame object,.banner-frame img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;background:#030711}
+.video-shell{width:100%;min-width:0;min-height:0;aspect-ratio:16/9}
+.showcase-video{width:100%;height:100%;min-height:0;max-height:none;object-fit:contain}
+.editor-layout,.editor-copy,.video-shell,.media-card,.history-wrap{min-width:0;max-width:100%}
+.history-card-number span{opacity:.72}
+.history-card-visual.no-image{background:radial-gradient(circle at 25% 30%,rgba(0,245,255,.3),transparent 38%),radial-gradient(circle at 70% 70%,rgba(255,75,216,.3),transparent 42%),#07101e}
+.history-card-visual.no-image:after{content:'DEVZIKKY TECH';font:700 .55rem 'IBM Plex Mono',monospace;letter-spacing:.12em;color:var(--neon-cyan);text-shadow:0 0 12px rgba(0,245,255,.4)}
+.tap-flash{width:26px;height:26px;border-color:var(--neon-cyan,#00f5ff)}
+body.light-theme{--text:#17243b;--muted:#52627b;--line:rgba(48,75,120,.18);--glass-line:rgba(67,94,145,.23);--glass-bg:rgba(255,255,255,.76);background-color:#edf4ff;background-image:radial-gradient(ellipse at 8% 8%,rgba(0,210,225,.20),transparent 32%),radial-gradient(ellipse at 92% 22%,rgba(160,94,255,.18),transparent 34%),radial-gradient(ellipse at 55% 90%,rgba(255,86,197,.10),transparent 38%);color:#17243b}
+body.light-theme .site-header{background:rgba(246,250,255,.88);border-color:rgba(67,94,145,.2);box-shadow:0 8px 30px rgba(42,66,112,.08)}
+body.light-theme .glass-panel,body.light-theme .media-card,body.light-theme .editor-layout,body.light-theme .glass-control,body.light-theme .project-card,body.light-theme .principle-card,body.light-theme .toolbox-group,body.light-theme .contact-card,body.light-theme .journey-card,body.light-theme .skills-panel,body.light-theme .identity-strip,body.light-theme .manifesto{background:linear-gradient(145deg,rgba(255,255,255,.94),rgba(239,246,255,.88));color:#17243b;border-color:rgba(72,105,158,.23);box-shadow:0 14px 38px rgba(45,73,120,.10),inset 0 1px rgba(255,255,255,.95)}
+body.light-theme .history-card{background:linear-gradient(145deg,rgba(255,255,255,.97),rgba(235,244,255,.94));color:#17243b;border-color:rgba(72,105,158,.25)}
+body.light-theme .history-card p,body.light-theme .editor-copy p{color:#52627b}
+body.light-theme .glass-control{background:rgba(255,255,255,.92);color:#17243b;border-color:rgba(65,96,150,.28);box-shadow:0 6px 18px rgba(48,74,120,.08)}
+body.light-theme .glass-control:hover{background:#fff;border-color:#00aebc;box-shadow:0 0 0 3px rgba(0,190,205,.10),0 10px 24px rgba(48,74,120,.12)}
+body.light-theme .tag-cloud span,body.light-theme .identity-pills span{background:rgba(236,244,255,.92);color:#334660;border-color:rgba(65,96,150,.18)}
+body.light-theme .banner-frame,body.light-theme .video-shell{background:#07101e}
+body.light-theme .desktop-nav.nav-open{background:rgba(247,250,255,.98);border-color:rgba(65,96,150,.22);box-shadow:0 18px 45px rgba(35,57,96,.16)}
+body.light-theme .desktop-nav.nav-open a{color:#17243b}
+@media(max-width:760px){
+ .editor-layout{grid-template-columns:minmax(0,1fr);gap:18px}
+ .editor-copy{width:100%;overflow-wrap:anywhere}
+ .social-links{gap:8px}.social-links .glass-control{flex:0 1 auto;max-width:100%;white-space:normal}
+ .video-shell{width:100%;aspect-ratio:16/9;min-height:0;border-radius:14px}
+ .showcase-video{min-height:0;height:100%;object-fit:contain}
+ .video-fab{right:12px;bottom:calc(82px + env(safe-area-inset-bottom));max-width:min(190px,52vw);white-space:normal;z-index:850}
+ .video-fab span{display:inline-block;max-width:125px;overflow-wrap:anywhere}
+ .banner-frame{aspect-ratio:900/160;min-height:74px;max-height:none}
+ .history-wrap{overflow:hidden}
+ .history-track{display:grid;grid-template-columns:minmax(0,.34fr) minmax(0,2.5fr) minmax(0,.34fr);gap:7px;align-items:stretch}
+ .history-card{padding:12px 10px;min-width:0;min-height:0;border-radius:17px;overflow:hidden}
+ .history-card.side{filter:blur(1.2px);opacity:.5;transform:scale(.96)}
+ .history-card.side h3,.history-card.side p,.history-card.side .history-link,.history-card.side .history-card-number span{display:none}
+ .history-card.side .history-card-visual{height:110px;margin:10px 0}
+ .history-card.active{transform:translateY(-2px)}
+ .history-card.active h3{font-size:clamp(.88rem,3.8vw,1.08rem);overflow-wrap:anywhere}
+ .history-card.active p{font-size:clamp(.72rem,3.1vw,.82rem);line-height:1.55;overflow-wrap:anywhere}
+ .history-card.active .history-card-visual{height:clamp(100px,29vw,155px)}
+ .history-card-number{font-size:.66rem;overflow-wrap:anywhere}
+ .history-card .history-link{font-size:.66rem;overflow-wrap:anywhere}
+ .history-controls{flex-wrap:wrap;gap:9px}
+ .history-controls .glass-control{min-height:40px;padding:9px 11px;font-size:.62rem}
+ .history-dots{flex-wrap:wrap;max-width:100%;padding:0 8px}
+}
+@media(max-width:380px){.history-track{grid-template-columns:minmax(0,.22fr) minmax(0,3fr) minmax(0,.22fr);gap:5px}.history-card{padding:10px 8px}.history-card.side .history-card-visual{height:88px}.history-card.active .history-card-visual{height:100px}.history-controls .glass-control{font-size:.57rem;padding:8px}.video-fab{right:8px;max-width:54vw}}
+
+</style>
 </head>
 
 <body>
@@ -1696,7 +1748,7 @@ body.light-theme{--text:#172238;--muted:#58677f;--line:rgba(55,91,140,.2);backgr
     <section class="section-shell content-section" id="media-gallery">
       <div class="section-heading reveal"><span class="section-kicker">🪄 MOTION LAB</span><h2>Little loops. Big energy. ⚡</h2><p>Separate playback controls for each visual asset.</p></div>
       <div class="media-grid">
-        <article class="media-card glass-panel reveal"><div class="media-card-heading"><span>🎞️ LOOPING GIF</span><span class="media-badge">OUTRO</span></div><div class="gif-frame"><img id="outroGif" src="outro.gif" alt="DEVZIKKY animated outro" loading="lazy"></div><button class="glass-control media-toggle" id="gifToggle" type="button" aria-pressed="false">Ⅱ PAUSE GIF</button><p class="media-status" id="gifStatus" role="status">✨ Looping animation</p></article>
+        <article class="media-card glass-panel reveal"><div class="media-card-heading"><span>🎞️ LOOPING GIF</span><span class="media-badge">OUTRO</span></div><div class="gif-frame"><img id="outroGif" src="video.gif" alt="DEVZIKKY animated outro" loading="lazy"></div><button class="glass-control media-toggle" id="gifToggle" type="button" aria-pressed="false">Ⅱ PAUSE GIF</button><p class="media-status" id="gifStatus" role="status">✨ Looping animation</p></article>
         <article class="media-card glass-panel reveal"><div class="media-card-heading"><span>🖼️ SVG BANNER</span><span class="media-badge">VISUAL</span></div><div class="banner-frame"><object id="bannerObject" data="banner.svg" type="image/svg+xml" aria-label="DEVZIKKY animated SVG banner"></object><img id="bannerFallback" src="banner.svg" alt="DEVZIKKY banner" hidden></div><button class="glass-control media-toggle" id="bannerToggle" type="button" aria-pressed="false">Ⅱ PAUSE BANNER</button><p class="media-status" id="bannerStatus" role="status">💫 Banner ready</p></article>
       </div>
     </section>
@@ -1965,6 +2017,8 @@ url: "https://zikkyphishing.netlify.app"
 ];
 
 
+PROJECTS.forEach((project, index) => { project.slideNumber = index + 1; });
+
 const nav = document.getElementById("mainNav");
 const menuToggle = document.getElementById("menuToggle");
 
@@ -2007,13 +2061,7 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matc
  paint();btn.addEventListener('click',()=>{light=!light;paint();try{localStorage.setItem('devzikky-theme',light?'light':'dark');}catch{}});
 })();
 
-// Mobile nav; preserve the existing preview modal's scroll lock.
-(function improveMenu(){
- const btn=$('menuToggle'),nav=$('mainNav');if(!btn||!nav)return;
- const close=()=>{nav.classList.remove('nav-open');btn.classList.remove('active');btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label','Open navigation');};
- btn.addEventListener('click',()=>{const opening=!nav.classList.contains('nav-open');nav.classList.toggle('nav-open',opening);btn.classList.toggle('active',opening);btn.setAttribute('aria-expanded',String(opening));btn.setAttribute('aria-label',opening?'Close navigation':'Open navigation');});
- nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
-})();
+// The original navigation controller below is retained as the single menu controller.
 
 // Main video and synchronized single-button controls.
 (function initShowcaseVideo(){
@@ -2040,10 +2088,10 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matc
   if(value){
    try{const c=document.createElement('canvas');c.width=img.naturalWidth||640;c.height=img.naturalHeight||360;c.getContext('2d').drawImage(img,0,0,c.width,c.height);frameUrl=c.toDataURL('image/png');img.src=frameUrl;status.textContent='⏸️ GIF paused.';}
    catch{status.textContent='ℹ️ This browser could not freeze the GIF frame; playback may continue.';paused=false;}
-  }else{if(frameUrl){img.src='outro.gif';frameUrl=null;}status.textContent='✨ GIF looping.';}
+  }else{if(frameUrl){img.src='video.gif';frameUrl=null;}status.textContent='✨ GIF looping.';}
   btn.innerHTML=paused?'▶ PLAY GIF':'Ⅱ PAUSE GIF';btn.setAttribute('aria-pressed',String(paused));
  };
- btn.addEventListener('click',()=>setPaused(!paused));img.addEventListener('error',()=>{status.textContent='⚠️ GIF UNAVAILABLE — check that outro.gif is beside index.html.';btn.disabled=true;});
+ btn.addEventListener('click',()=>setPaused(!paused));img.addEventListener('error',()=>{status.textContent='⚠️ GIF UNAVAILABLE — check that video.gif is beside index.html.';btn.disabled=true;});
 })();
 
 // SVG banner controls: pause CSS/SVG animation where same-origin object access allows it.
@@ -2060,26 +2108,26 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matc
  obj.addEventListener('load',()=>{if(paused)apply();});
 })();
 
-// Coding history uses existing PROJECTS order. Slide numbers live on the JS objects.
+// Coding history: robust project data, deterministic numbering and responsive carousel.
 (function initHistory(){
  const track=$('historyTrack'),dots=$('historyDots'),counter=$('historyCounter');if(!track||!dots||!counter)return;
- const historyItems=PROJECTS.map((p)=>({...p}));let active=0,timer=null,hovering=false;
+ const historyItems=PROJECTS.map((p,i)=>({...p,slideNumber:i+1,name:p.name||p.title||`Project ${i+1}`,description:p.description||'A project from the DEVZIKKY TECH build journey.',url:p.url||'#',image:p.image||''}));
+ let active=0,hovering=false,touchStartX=0,touchEndX=0;
  const safe=(value)=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
  const render=()=>{
-  if(!historyItems.length){track.innerHTML='<p>Projects will appear here soon.</p>';return;}
-  const n=historyItems.length;const indexes=[(active-1+n)%n,active,(active+1)%n];
-  track.innerHTML=indexes.map((idx,pos)=>{const p=historyItems[idx];return `<article class="history-card ${pos===1?'active':'side'}" aria-label="Project ${String(p.slideNumber).padStart(2,'0')}: ${safe(p.name)}"><div class="history-card-number">${String(p.slideNumber).padStart(2,'0')} / ${String(n).padStart(2,'0')}</div><div class="history-card-visual">${p.image?`<img src="${safe(p.image)}" alt="" loading="lazy" onerror="this.style.display='none'">`:'✦'}</div><h3>${safe(p.name)}</h3><p>${safe(p.description)}</p><a class="history-link" href="${safe(p.url)}" target="_blank" rel="noopener noreferrer">EXPLORE PROJECT ↗</a></article>`;}).join('');
+  if(!historyItems.length){track.innerHTML='<p>Projects will appear here soon.</p>';counter.textContent='00 / 00';dots.innerHTML='';return;}
+  const n=historyItems.length,indexes=[(active-1+n)%n,active,(active+1)%n];
+  track.innerHTML=indexes.map((idx,pos)=>{const p=historyItems[idx];const num=String(idx+1).padStart(2,'0');const image=p.image?`<img src="${safe(p.image)}" alt="${safe(p.name)} preview" loading="lazy" onerror="this.closest('.history-card-visual').classList.add('no-image');this.remove()">`:'';const link=p.url&&p.url!=='#'?`<a class="history-link" href="${safe(p.url)}" target="_blank" rel="noopener noreferrer">EXPLORE PROJECT ↗</a>`:'';return `<article class="history-card ${pos===1?'active':'side'}" aria-label="Project ${num}: ${safe(p.name)}" ${pos===1?'aria-current="true"':''}><div class="history-card-number">${num} <span>/ ${String(n).padStart(2,'0')}</span></div><div class="history-card-visual ${image?'has-image':'no-image'}">${image||'<span aria-hidden="true">✦</span>'}</div><h3>${safe(p.name)}</h3><p>${safe(p.description)}</p>${link}</article>`;}).join('');
   counter.textContent=`${String(active+1).padStart(2,'0')} / ${String(n).padStart(2,'0')}`;
-  dots.innerHTML=historyItems.map((p,i)=>`<button type="button" aria-label="Show project ${i+1}" aria-current="${i===active?'true':'false'}" data-history-index="${i}"></button>`).join('');
+  dots.innerHTML=historyItems.map((p,i)=>`<button type="button" aria-label="Show project ${i+1}: ${safe(p.name)}" aria-current="${i===active?'true':'false'}" data-history-index="${i}"></button>`).join('');
  };
  const go=idx=>{active=(idx+historyItems.length)%historyItems.length;render();};
  $('historyPrev')?.addEventListener('click',()=>go(active-1));$('historyNext')?.addEventListener('click',()=>go(active+1));dots.addEventListener('click',e=>{const b=e.target.closest('[data-history-index]');if(b)go(Number(b.dataset.historyIndex));});
- const wrap=track.closest('.history-wrap');wrap?.addEventListener('mouseenter',()=>{hovering=true;});wrap?.addEventListener('mouseleave',()=>{hovering=false;});wrap?.addEventListener('focusin',()=>{hovering=true;});wrap?.addEventListener('focusout',()=>{hovering=false;});
+ const wrap=track.closest('.history-wrap');wrap?.addEventListener('mouseenter',()=>hovering=true);wrap?.addEventListener('mouseleave',()=>hovering=false);wrap?.addEventListener('focusin',()=>hovering=true);wrap?.addEventListener('focusout',e=>{if(!wrap.contains(e.relatedTarget))hovering=false;});
+ wrap?.addEventListener('touchstart',e=>{touchStartX=e.changedTouches[0].clientX;},{passive:true});wrap?.addEventListener('touchend',e=>{touchEndX=e.changedTouches[0].clientX;const delta=touchEndX-touchStartX;if(Math.abs(delta)>45)go(active+(delta<0?1:-1));},{passive:true});
  const years=$('historyYears');if(years){const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'Africa/Lagos',year:'numeric'}).formatToParts(new Date());const year=Number(parts.find(p=>p.type==='year')?.value||new Date().getFullYear());years.textContent=String(Math.max(0,year-2024));}
- render();if(!reducedMotion)timer=window.setInterval(()=>{if(!hovering&&document.visibilityState==='visible')go(active+1);},5000);
+ render();if(!reducedMotion)window.setInterval(()=>{if(!hovering&&document.visibilityState==='visible')go(active+1);},5000);
 })();
-
-PROJECTS.forEach((project, index) => { project.slideNumber = index + 1; });
 
 const projectGrid = document.getElementById("projectGrid");
 const previewModal = document.getElementById("previewModal");
