@@ -163,22 +163,28 @@ No `npm install`. No build command. No configuration required.
 
 ```
 zikkytech/
-├── index.html
+├── LICENSE
+├── README.md
+├── banner.svg
 ├── icon.png
+├── index.html
+├── intro.svg
 ├── logo1.png
 ├── logo2.png
-├── ss-zquote.png
-├── ss-zmail.png
-├── ss-zmaildrop.png
-├── ss-zdropmail.png
+├── outro.gif
 ├── ss-ai.png
 ├── ss-ai2.png
-├── ss-manga.png
 ├── ss-cal.png
+├── ss-manga.png
+├── ss-pair.png
 ├── ss-tg.png
 ├── ss-yt.png
-├── LICENSE
-└── README.md
+├── ss-zdropmail.png
+├── ss-zmail.png
+├── ss-zmaildrop.png
+├── ss-zquote.png
+├── video.gif
+└── video.mp4
 ```
 
 The portfolio is intentionally lightweight. The main site is contained in a single HTML file with its CSS, JavaScript, project data, and modal system.
