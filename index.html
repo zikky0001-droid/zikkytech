@@ -1370,6 +1370,28 @@ h3 {
 @media(max-width:760px){.identity-strip{align-items:flex-start;flex-direction:column}.identity-pills{justify-content:flex-start}.toolbox-grid{grid-template-columns:1fr}.principle-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:470px){.principle-grid{grid-template-columns:1fr}.manifesto{grid-template-columns:1fr}.hero-note{font-size:.68rem}}
 
+
+@media(max-width:760px){.desktop-nav.nav-open{display:flex;position:absolute;top:100%;left:12px;right:12px;flex-direction:column;align-items:stretch;padding:14px;border:1px solid var(--glass-line);border-radius:16px;background:rgba(5,9,18,.96);backdrop-filter:blur(24px);z-index:1000}.desktop-nav.nav-open a{padding:12px}.site-header .header-inner{position:relative}}
+/* ── DEVZIKKY cosmic glass upgrade ─────────────────────────────── */
+:root{--neon-cyan:#00f5ff;--neon-violet:#9b5cff;--neon-pink:#ff4bd8;--glass-bg:rgba(13,20,36,.58);--glass-line:rgba(120,210,255,.23)}
+body{background-image:radial-gradient(ellipse at 12% 12%,rgba(0,245,255,.075),transparent 34%),radial-gradient(ellipse at 85% 35%,rgba(155,92,255,.11),transparent 36%),radial-gradient(ellipse at 50% 90%,rgba(255,75,216,.055),transparent 38%)}
+.site-header{backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);background:rgba(5,9,18,.72);border-bottom:1px solid rgba(0,245,255,.13)}
+.brand-mark{box-shadow:0 0 18px rgba(0,245,255,.24),0 0 35px rgba(155,92,255,.16)}
+.button,.filter,.project-card,.principle-card,.toolbox-group,.contact-card,.journey-card,.skills-panel,.identity-strip,.manifesto{backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.glass-panel,.media-card,.editor-layout{border:1px solid var(--glass-line);background:linear-gradient(135deg,rgba(19,30,51,.78),rgba(9,14,27,.64));border-radius:22px;box-shadow:0 18px 55px rgba(0,0,0,.24),inset 0 1px rgba(255,255,255,.055),0 0 28px rgba(0,245,255,.045)}
+.glass-control{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:10px 14px;border:1px solid rgba(0,245,255,.28);border-radius:12px;color:var(--text,#f5f7ff);background:rgba(15,25,43,.68);font:600 .7rem "IBM Plex Mono",monospace;text-decoration:none;cursor:pointer;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:transform .2s,border-color .2s,box-shadow .2s,background .2s}
+.glass-control:hover{transform:translateY(-2px);border-color:var(--neon-cyan);box-shadow:0 0 22px rgba(0,245,255,.15),inset 0 0 16px rgba(155,92,255,.07)}
+.theme-toggle{margin-left:auto;margin-right:10px;white-space:nowrap}.theme-toggle span{font-size:.6rem}
+.editor-section,.media-grid,.history-wrap{position:relative}.editor-layout{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:24px;padding:clamp(18px,3vw,32px);align-items:center}.editor-copy h3{font-size:clamp(1.35rem,3vw,2rem);line-height:1.16;margin:18px 0 12px}.editor-copy p{color:var(--muted);line-height:1.7}.live-pill,.media-badge{display:inline-flex;align-items:center;gap:8px;padding:7px 10px;border:1px solid rgba(0,245,255,.22);border-radius:99px;background:rgba(0,245,255,.06);color:var(--neon-cyan);font:600 .62rem "IBM Plex Mono",monospace}.social-links{display:flex;flex-wrap:wrap;gap:9px;margin:18px 0}.social-instagram{border-color:rgba(255,75,216,.38)}.social-tiktok{border-color:rgba(0,245,255,.35)}
+.video-shell{position:relative;overflow:hidden;min-height:230px;aspect-ratio:16/9;border:1px solid rgba(0,245,255,.35);border-radius:18px;background:radial-gradient(circle,rgba(155,92,255,.15),#050812 70%);box-shadow:0 0 35px rgba(0,245,255,.1),0 0 60px rgba(155,92,255,.08)}.showcase-video{display:block;width:100%;height:100%;min-height:230px;max-height:560px;object-fit:contain;background:#05070d}.video-overlay{position:absolute;inset:12px 12px auto;display:flex;justify-content:space-between;gap:10px;pointer-events:none;color:#fff;font:600 .62rem "IBM Plex Mono",monospace;text-shadow:0 2px 10px #000}.video-live{display:flex;align-items:center;gap:6px}.video-live i{width:7px;height:7px;border-radius:50%;background:#00ffb3;box-shadow:0 0 12px #00ffb3}.video-center-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;border:1px solid rgba(255,255,255,.6);background:rgba(4,12,25,.72);color:white;font-size:1.2rem;cursor:pointer;backdrop-filter:blur(12px)}.video-center-play[hidden]{display:none}.video-fab{position:fixed;z-index:800;right:24px;bottom:106px;border-color:rgba(0,245,255,.48);box-shadow:0 0 26px rgba(0,245,255,.15)}.video-fab[aria-pressed="true"]{border-color:rgba(255,75,216,.45)}.media-status{min-height:1.2em;color:var(--muted);font:500 .68rem "IBM Plex Mono",monospace;margin:10px 0 0}.media-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.media-card{padding:18px;min-width:0}.media-card-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px;font:600 .72rem "IBM Plex Mono",monospace}.gif-frame,.banner-frame{height:clamp(190px,26vw,340px);display:grid;place-items:center;overflow:hidden;border:1px solid rgba(0,245,255,.18);border-radius:14px;background:rgba(0,0,0,.35);margin-bottom:14px}.gif-frame img{width:100%;height:100%;object-fit:contain}.banner-frame object,.banner-frame img{width:100%;height:100%;object-fit:contain}.media-toggle{width:100%}
+.history-wrap{overflow:hidden;padding:12px 0 4px}.history-track{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:stretch;overflow:visible}.history-card{position:relative;min-width:0;min-height:290px;padding:18px;border:1px solid var(--glass-line);border-radius:20px;background:linear-gradient(145deg,rgba(21,34,58,.86),rgba(8,13,26,.84));box-shadow:inset 0 1px rgba(255,255,255,.05);transition:opacity .45s,filter .45s,transform .45s,border-color .45s,box-shadow .45s;overflow:hidden}.history-card.side{opacity:.56;filter:blur(1.6px);transform:scale(.94)}.history-card.active{border-color:rgba(0,245,255,.65);box-shadow:0 0 30px rgba(0,245,255,.13),0 0 55px rgba(155,92,255,.08);transform:translateY(-4px)}.history-card-number{font:700 .72rem "IBM Plex Mono",monospace;color:var(--neon-cyan)}.history-card h3{margin:14px 0 8px;font-size:1.05rem}.history-card p{font-size:.78rem;line-height:1.6;color:var(--muted)}.history-card .history-link{display:inline-block;margin-top:8px;color:var(--neon-cyan);font-size:.72rem}.history-card-visual{height:92px;margin:12px 0;border-radius:12px;border:1px solid rgba(0,245,255,.15);background:radial-gradient(circle at 25% 30%,rgba(0,245,255,.24),transparent 35%),radial-gradient(circle at 70% 70%,rgba(155,92,255,.3),transparent 42%),rgba(4,8,17,.8);display:grid;place-items:center;font-size:2rem;overflow:hidden}.history-card-visual img{width:100%;height:100%;object-fit:cover}.history-controls{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:20px}.history-controls span{font:600 .7rem "IBM Plex Mono",monospace;color:var(--neon-cyan)}.history-dots{display:flex;justify-content:center;gap:7px;margin-top:12px}.history-dots button{width:7px;height:7px;padding:0;border:0;border-radius:99px;background:rgba(140,160,190,.4);cursor:pointer}.history-dots button[aria-current="true"]{width:24px;background:var(--neon-cyan);box-shadow:0 0 12px rgba(0,245,255,.4)}
+.intro-screen{position:fixed;inset:0;z-index:2000;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;padding:24px;background:radial-gradient(ellipse at 50% 45%,rgba(26,36,75,.6),transparent 42%),#03050b;color:#f5f8ff;transition:opacity .65s ease,visibility .65s ease}.intro-screen.is-hidden{opacity:0;visibility:hidden;pointer-events:none}.intro-stars{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(1px 1px at 20% 30%,rgba(0,245,255,.8) 50%,transparent 100%),radial-gradient(2px 2px at 75% 20%,rgba(155,92,255,.8) 50%,transparent 100%),radial-gradient(1px 1px at 65% 80%,rgba(255,255,255,.7) 50%,transparent 100%),radial-gradient(1px 1px at 30% 75%,rgba(0,245,255,.7) 50%,transparent 100%);background-size:190px 170px,230px 220px,160px 180px,210px 240px;animation:starDrift 18s linear infinite}.intro-atom{position:relative;width:clamp(150px,26vw,220px);height:clamp(150px,26vw,220px);margin-bottom:18px;filter:drop-shadow(0 0 18px rgba(0,245,255,.24))}.intro-svg{display:block;width:100%;height:100%;object-fit:contain}.atom-core{position:absolute;width:17%;height:17%;left:41.5%;top:41.5%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#00f5ff 38%,#8655ff 75%);box-shadow:0 0 20px #00f5ff,0 0 50px rgba(155,92,255,.65);animation:corePulse 1.8s ease-in-out infinite}.atom-ring{position:absolute;inset:20% 0;border:1px solid rgba(0,245,255,.85);border-radius:50%;box-shadow:0 0 13px rgba(0,245,255,.35),inset 0 0 13px rgba(155,92,255,.12);transform:rotate(-35deg);animation:atomSpin 5s linear infinite}.atom-ring i{position:absolute;top:2%;left:24%;width:9px;height:9px;border-radius:50%;background:#fff;box-shadow:0 0 8px #00f5ff,0 0 20px #00f5ff}.ring-b{inset:20% 0;transform:rotate(35deg);border-color:rgba(174,111,255,.9);animation-duration:7s;animation-direction:reverse}.ring-b i{top:auto;bottom:2%;left:68%;background:#c6a3ff;box-shadow:0 0 18px #9b5cff}.ring-c{inset:0 20%;transform:rotate(65deg);border-color:rgba(255,75,216,.6);animation-duration:9s}.ring-c i{top:48%;left:-2%;background:#ffb6f1;box-shadow:0 0 18px #ff4bd8}.intro-brand{font:700 clamp(1.5rem,5vw,2.6rem) "Space Grotesk",sans-serif;letter-spacing:.12em;text-align:center;text-shadow:0 0 20px rgba(0,245,255,.45),0 0 35px rgba(155,92,255,.25)}.intro-brand span{color:#00f5ff}.intro-tagline{margin:8px 0 26px;color:#aab6d4;font:500 .65rem "IBM Plex Mono",monospace;letter-spacing:.16em;text-align:center}.intro-message{min-height:1.4em;text-align:center;color:#e5ddff;font:600 .72rem "IBM Plex Mono",monospace;letter-spacing:.06em}.intro-progress{width:min(360px,82vw);height:5px;overflow:hidden;border-radius:99px;background:rgba(255,255,255,.12);box-shadow:0 0 16px rgba(0,245,255,.08)}.intro-progress span{display:block;width:0;height:100%;border-radius:inherit;background:linear-gradient(90deg,#00f5ff,#9b5cff,#ff4bd8);box-shadow:0 0 14px rgba(0,245,255,.7);transition:width .25s ease}.intro-progress-meta{width:min(360px,82vw);display:flex;justify-content:space-between;margin-top:9px;color:#8e9bb8;font:500 .6rem "IBM Plex Mono",monospace}.intro-progress-meta strong{color:#00f5ff}.intro-network{max-width:450px;text-align:center;color:#ffc78a;font-size:.7rem;line-height:1.7}.intro-network button,.intro-skip{border:0;background:transparent;color:#00f5ff;text-decoration:underline;cursor:pointer;font:600 .65rem "IBM Plex Mono",monospace}.intro-skip{position:absolute;right:22px;bottom:20px;text-decoration:none;padding:10px}.intro-network[hidden]{display:none!important}
+body.light-theme{--text:#172238;--muted:#58677f;--line:rgba(55,91,140,.2);background-color:#f2f6ff;background-image:radial-gradient(ellipse at 12% 12%,rgba(0,174,210,.12),transparent 34%),radial-gradient(ellipse at 85% 35%,rgba(132,83,226,.12),transparent 36%);color:#172238}body.light-theme .site-header{background:rgba(245,249,255,.78);border-color:rgba(48,96,150,.2)}body.light-theme .glass-panel,body.light-theme .media-card,body.light-theme .editor-layout,body.light-theme .history-card,body.light-theme .glass-control{background:rgba(255,255,255,.66);color:#172238;border-color:rgba(68,110,170,.25);box-shadow:0 12px 35px rgba(43,72,120,.09),inset 0 1px rgba(255,255,255,.9)}body.light-theme .history-card-visual{background:radial-gradient(circle at 25% 30%,rgba(0,190,220,.2),transparent 35%),radial-gradient(circle at 70% 70%,rgba(155,92,255,.18),transparent 42%),rgba(230,239,255,.8)}body.light-theme .principle-card,body.light-theme .toolbox-group,body.light-theme .manifesto{background:rgba(255,255,255,.72)}body.light-theme .tag-cloud span,body.light-theme .identity-pills span{background:rgba(255,255,255,.65)}
+@keyframes atomSpin{to{rotate:360deg}}@keyframes corePulse{0%,100%{scale:.9;filter:brightness(.9)}50%{scale:1.12;filter:brightness(1.35)}}@keyframes starDrift{to{background-position:190px 170px,-230px 220px,160px -180px,-210px 240px}}
+@media(max-width:760px){.editor-layout{grid-template-columns:1fr}.media-grid{grid-template-columns:1fr}.history-track{gap:7px}.history-card{padding:12px;min-height:265px}.history-card h3{font-size:.88rem}.history-card p{font-size:.7rem}.history-card-visual{height:70px}.video-fab{right:14px;bottom:96px;min-height:42px;padding:9px 11px}.video-fab span{font-size:.59rem}.theme-toggle{margin-left:auto;margin-right:7px;padding:8px 9px}.theme-toggle span{display:none}}
+@media(max-width:430px){.history-track{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.history-card{padding:9px;min-height:255px;border-radius:14px}.history-card.side{filter:blur(1px);opacity:.48}.history-card h3{font-size:.76rem}.history-card p{font-size:.65rem}.history-card-visual{height:55px;font-size:1.4rem}.history-card .history-link{font-size:.62rem}.history-controls{gap:8px}.history-controls .glass-control{padding:8px;font-size:.57rem}.intro-tagline{letter-spacing:.07em}.video-fab span{max-width:100px}}
+@media(prefers-reduced-motion:reduce){.intro-stars,.atom-core,.atom-ring,.atom-ring i,.status-dot,.fab-glow,.fab-core,.fab-orbit{animation:none!important}.intro-screen,.history-card,.glass-control{transition:none!important}html{scroll-behavior:auto!important}}
+
   </style>
 </head>
 
@@ -1392,6 +1414,8 @@ h3 {
         <a href="#about">About</a>
         <a href="#journey">Journey</a>
         <a href="#projects">Projects</a>
+        <a href="#creator">Editing</a>
+        <a href="#coding-history">History</a>
         <a href="#mindset">Mindset</a>
         <a href="#contact">Contact</a>
         <a href="https://devzikky.onrender.com" class="nav-cta" target="_blank" rel="noopener noreferrer">
@@ -1400,6 +1424,7 @@ h3 {
       </a>
       </nav>
 
+      <button class="theme-toggle glass-control" id="themeToggle" type="button" aria-label="Switch to light theme" title="Switch theme">☀️ <span>LIGHT</span></button>
       <button class="menu-toggle" id="menuToggle" type="button"
               aria-label="Open navigation" aria-expanded="false" aria-controls="mainNav">
         <span></span><span></span><span></span>
@@ -1629,6 +1654,53 @@ h3 {
       </div>
     </section>
 
+    <section class="section-shell content-section editor-section" id="creator">
+      <div class="section-heading reveal">
+        <span class="section-kicker">🎬 DEVELOPER × EDITOR × CREATOR</span>
+        <h2>Code by logic. Edit by feeling. ✨</h2>
+        <p>I'm not only building software — I'm also shaping stories through video editing and digital creativity.</p>
+      </div>
+      <div class="editor-layout glass-panel reveal">
+        <div class="editor-copy">
+          <span class="live-pill"><span class="status-dot"></span> CREATIVE MODE: ACTIVE</span>
+          <h3>From lines of code to frames that hit different. 🚀</h3>
+          <p>Explore my creative side, then connect with me across my platforms.</p>
+          <div class="social-links">
+            <a class="glass-control social-youtube" href="https://m.youtube.com/@devzikky" target="_blank" rel="noopener noreferrer">▶️ YouTube</a>
+            <a class="glass-control social-instagram" href="https://www.instagram.com/devzikky" target="_blank" rel="noopener noreferrer">📸 Instagram</a>
+            <a class="glass-control social-tiktok" href="https://www.tiktok.com/@devzikky" target="_blank" rel="noopener noreferrer">🎵 TikTok</a>
+          </div>
+          <p class="media-status" id="videoStatus" role="status" aria-live="polite">🎥 Preparing showcase…</p>
+        </div>
+        <div class="video-shell">
+          <video id="showcaseVideo" class="showcase-video" src="video.mp4" loop playsinline preload="metadata" aria-label="DEVZIKKY video editing showcase"></video>
+          <div class="video-overlay"><span>🎞️ DEVZIKKY EDITS</span><span class="video-live"><i></i> LOOP MODE</span></div>
+          <button class="video-center-play" id="videoCenterPlay" type="button" aria-label="Play showcase video">▶</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell content-section" id="coding-history">
+      <div class="section-heading reveal">
+        <span class="section-kicker">📜 THE BUILD LOG</span>
+        <h2>MY CODING HISTORY</h2>
+        <p>My project history over the past <strong id="historyYears">2</strong> years — one idea at a time. 💻</p>
+      </div>
+      <div class="history-wrap reveal">
+        <div class="history-track" id="historyTrack" aria-live="polite"></div>
+        <div class="history-controls"><button class="glass-control" id="historyPrev" type="button" aria-label="Previous project">← PREVIOUS</button><span id="historyCounter">01 / 01</span><button class="glass-control" id="historyNext" type="button" aria-label="Next project">NEXT →</button></div>
+        <div class="history-dots" id="historyDots" aria-label="Choose project"></div>
+      </div>
+    </section>
+
+    <section class="section-shell content-section" id="media-gallery">
+      <div class="section-heading reveal"><span class="section-kicker">🪄 MOTION LAB</span><h2>Little loops. Big energy. ⚡</h2><p>Separate playback controls for each visual asset.</p></div>
+      <div class="media-grid">
+        <article class="media-card glass-panel reveal"><div class="media-card-heading"><span>🎞️ LOOPING GIF</span><span class="media-badge">OUTRO</span></div><div class="gif-frame"><img id="outroGif" src="outro.gif" alt="DEVZIKKY animated outro" loading="lazy"></div><button class="glass-control media-toggle" id="gifToggle" type="button" aria-pressed="false">Ⅱ PAUSE GIF</button><p class="media-status" id="gifStatus" role="status">✨ Looping animation</p></article>
+        <article class="media-card glass-panel reveal"><div class="media-card-heading"><span>🖼️ SVG BANNER</span><span class="media-badge">VISUAL</span></div><div class="banner-frame"><object id="bannerObject" data="banner.svg" type="image/svg+xml" aria-label="DEVZIKKY animated SVG banner"></object><img id="bannerFallback" src="banner.svg" alt="DEVZIKKY banner" hidden></div><button class="glass-control media-toggle" id="bannerToggle" type="button" aria-pressed="false">Ⅱ PAUSE BANNER</button><p class="media-status" id="bannerStatus" role="status">💫 Banner ready</p></article>
+      </div>
+    </section>
+
     <section class="section-shell content-section" id="projects">
       <div class="section-heading reveal">
         <span class="section-kicker">03 / PROJECTS</span>
@@ -1788,6 +1860,17 @@ h3 {
     </div>
   </div>
 
+  <button id="videoFab" class="video-fab glass-control" type="button" aria-label="Pause showcase video" aria-pressed="false">Ⅱ <span>PAUSE SHOWCASE</span></button>
+  <div class="intro-screen" id="introScreen" role="status" aria-live="polite">
+    <div class="intro-stars" aria-hidden="true"></div>
+    <div class="intro-atom" aria-hidden="true"><img class="intro-svg" src="intro.svg" alt=""></div>
+    <div class="intro-brand">DEVZIKKY <span>TECH</span></div><p class="intro-tagline">A DEVELOPER. AN EDITOR. A CREATOR. 🚀</p>
+    <p class="intro-message" id="introMessage">PREPARING THE EXTRAORDINARY…</p>
+    <div class="intro-progress"><span id="introProgressFill"></span></div><div class="intro-progress-meta"><span id="introProgressText">INITIALIZING</span><strong id="introPercent">0%</strong></div>
+    <p class="intro-network" id="introNetwork" hidden>⚠️ SOME RESOURCES ARE TAKING LONGER THAN EXPECTED. <button type="button" id="introContinue">CONTINUE ANYWAY ↗</button></p>
+    <button class="intro-skip" id="introSkip" type="button">SKIP INTRO ↗</button>
+  </div>
+
   <script>
 
 const PROJECTS = [
@@ -1884,6 +1967,120 @@ url: "https://zikkyphishing.netlify.app"
 
 const nav = document.getElementById("mainNav");
 const menuToggle = document.getElementById("menuToggle");
+
+// ── Premium media, theme, intro and coding-history enhancements ──
+const $ = (id) => document.getElementById(id);
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Intro screen: honest UI initialization progress (not a fabricated network byte count).
+(function initIntro(){
+  const screen=$('introScreen'); if(!screen) return;
+  const messages=['READY TO MEET DEVZIKKY? 🚀','PREPARING THE EXTRAORDINARY… ✨','A DEVELOPER. AN EDITOR. A CREATOR. 🎬','INITIALIZING THE DEVZIKKY UNIVERSE 🌌','GREAT THINGS ARE LOADING… ⚡','WELCOME TO TOMORROW. 💎'];
+  const fill=$('introProgressFill'), pct=$('introPercent'), label=$('introProgressText'), msg=$('introMessage'), warning=$('introNetwork');
+  let progress=0, dismissed=false, ready=false, started=performance.now();
+  const dismiss=()=>{if(dismissed)return;dismissed=true;screen.classList.add('is-hidden');document.body.classList.remove('intro-active');window.setTimeout(()=>screen.remove(),750);};
+  $('introSkip')?.addEventListener('click',dismiss); $('introContinue')?.addEventListener('click',dismiss);
+  msg.textContent=messages[Math.floor(Math.random()*messages.length)];
+  const messageTimer=window.setInterval(()=>{msg.textContent=messages[Math.floor(Math.random()*messages.length)];},2600);
+  const tick=()=>{
+    if(dismissed)return;
+    const elapsed=performance.now()-started;
+    // Keep the loader responsive; progress represents initialization stages, not total bytes downloaded.
+    const target=ready?100:Math.min(92,Math.floor(12+elapsed/160));
+    progress=Math.max(progress,Math.min(target,progress+3));
+    fill.style.width=progress+'%';pct.textContent=progress+'%';label.textContent=ready?'EXPERIENCE READY':'INITIALIZING EXPERIENCE';
+    if(ready){progress=100;fill.style.width='100%';pct.textContent='100%';label.textContent='READY';window.clearInterval(messageTimer);window.setTimeout(dismiss,reducedMotion?0:450);return;}
+    if(elapsed>25000){warning.hidden=false;label.textContent='TAKING LONGER THAN EXPECTED';}
+    window.setTimeout(tick,180);
+  };
+  window.addEventListener('load',()=>{ready=true;},{once:true});
+  // Avoid trapping visitors if a browser never dispatches load due to a stalled non-essential asset.
+  window.setTimeout(()=>{if(!ready){warning.hidden=false;label.textContent='SOME ASSETS ARE STILL LOADING';}},25000);
+  tick();
+})();
+
+// Light/dark theme; dark remains the default.
+(function initTheme(){
+ const btn=$('themeToggle');if(!btn)return;
+ let light=false;try{light=localStorage.getItem('devzikky-theme')==='light';}catch{}
+ const paint=()=>{document.body.classList.toggle('light-theme',light);btn.innerHTML=light?'🌙 <span>DARK</span>':'☀️ <span>LIGHT</span>';btn.setAttribute('aria-label',light?'Switch to dark theme':'Switch to light theme');};
+ paint();btn.addEventListener('click',()=>{light=!light;paint();try{localStorage.setItem('devzikky-theme',light?'light':'dark');}catch{}});
+})();
+
+// Mobile nav; preserve the existing preview modal's scroll lock.
+(function improveMenu(){
+ const btn=$('menuToggle'),nav=$('mainNav');if(!btn||!nav)return;
+ const close=()=>{nav.classList.remove('nav-open');btn.classList.remove('active');btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label','Open navigation');};
+ btn.addEventListener('click',()=>{const opening=!nav.classList.contains('nav-open');nav.classList.toggle('nav-open',opening);btn.classList.toggle('active',opening);btn.setAttribute('aria-expanded',String(opening));btn.setAttribute('aria-label',opening?'Close navigation':'Open navigation');});
+ nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
+})();
+
+// Main video and synchronized single-button controls.
+(function initShowcaseVideo(){
+ const video=$('showcaseVideo'),fab=$('videoFab'),center=$('videoCenterPlay'),status=$('videoStatus');if(!video||!fab)return;
+ let userPaused=false;
+ const paint=()=>{const playing=!video.paused&&!video.ended;fab.innerHTML=playing?'Ⅱ <span>PAUSE SHOWCASE</span>':'▶ <span>RESUME SHOWCASE</span>';fab.setAttribute('aria-pressed',String(!playing));fab.setAttribute('aria-label',playing?'Pause showcase video':'Resume showcase video');center.hidden=playing;};
+ const play=async()=>{userPaused=false;try{await video.play();status.textContent='🎬 Showcase playing — looping enabled.';}catch(err){status.textContent=video.error?'⚠️ VIDEO UNAVAILABLE — check that video.mp4 is beside index.html.':'🔊 Tap play to allow video and audio playback in this browser.';center.hidden=false;}paint();};
+ const pause=()=>{userPaused=true;video.pause();paint();status.textContent='⏸️ Showcase paused by you.';};
+ fab.addEventListener('click',()=>video.paused?play():pause());center?.addEventListener('click',play);
+ video.addEventListener('play',paint);video.addEventListener('pause',paint);video.addEventListener('ended',()=>{if(!userPaused)play();});
+ video.addEventListener('waiting',()=>{if(!userPaused)status.textContent='⏳ Buffering the showcase…';});
+ video.addEventListener('playing',()=>{status.textContent='🎬 Showcase playing — looping enabled.';paint();});
+ video.addEventListener('error',()=>{status.textContent='⚠️ VIDEO UNAVAILABLE — ensure video.mp4 is present and encoded for web playback.';center.hidden=false;paint();});
+ // Requested audible autoplay attempt; browsers may require a user gesture.
+ play();
+})();
+
+// GIF pause/resume: freeze a captured frame, then restore the animated source.
+(function initGifControl(){
+ const img=$('outroGif'),btn=$('gifToggle'),status=$('gifStatus');if(!img||!btn)return;
+ let paused=false,frameUrl=null;
+ const setPaused=async value=>{
+  paused=value;
+  if(value){
+   try{const c=document.createElement('canvas');c.width=img.naturalWidth||640;c.height=img.naturalHeight||360;c.getContext('2d').drawImage(img,0,0,c.width,c.height);frameUrl=c.toDataURL('image/png');img.src=frameUrl;status.textContent='⏸️ GIF paused.';}
+   catch{status.textContent='ℹ️ This browser could not freeze the GIF frame; playback may continue.';paused=false;}
+  }else{if(frameUrl){img.src='outro.gif';frameUrl=null;}status.textContent='✨ GIF looping.';}
+  btn.innerHTML=paused?'▶ PLAY GIF':'Ⅱ PAUSE GIF';btn.setAttribute('aria-pressed',String(paused));
+ };
+ btn.addEventListener('click',()=>setPaused(!paused));img.addEventListener('error',()=>{status.textContent='⚠️ GIF UNAVAILABLE — check that outro.gif is beside index.html.';btn.disabled=true;});
+})();
+
+// SVG banner controls: pause CSS/SVG animation where same-origin object access allows it.
+(function initBannerControl(){
+ const obj=$('bannerObject'),fallback=$('bannerFallback'),btn=$('bannerToggle'),status=$('bannerStatus');if(!obj||!btn)return;
+ let paused=false;
+ const apply=()=>{
+  try{const doc=obj.contentDocument;if(doc){doc.documentElement.style.animationPlayState=paused?'paused':'running';doc.querySelectorAll('*').forEach(el=>{el.style.animationPlayState=paused?'paused':'running';el.style.webkitAnimationPlayState=paused?'paused':'running';});const svg=doc.documentElement;if(svg.pauseAnimations&&svg.unpauseAnimations){paused?svg.pauseAnimations():svg.unpauseAnimations();}}}catch{}
+  // CSS animation pause can be applied to the embedded object's element itself.
+  obj.style.animationPlayState=paused?'paused':'running';obj.style.filter=paused?'saturate(.65)':'none';
+  btn.innerHTML=paused?'▶ PLAY BANNER':'Ⅱ PAUSE BANNER';btn.setAttribute('aria-pressed',String(paused));status.textContent=paused?'⏸️ Banner paused where supported.':'💫 Banner animation enabled.';
+ };
+ btn.addEventListener('click',()=>{paused=!paused;apply();});obj.addEventListener('error',()=>{obj.hidden=true;fallback.hidden=false;status.textContent='⚠️ Banner loaded as a static image; embedded animation controls may be limited.';});
+ obj.addEventListener('load',()=>{if(paused)apply();});
+})();
+
+// Coding history uses existing PROJECTS order. Slide numbers live on the JS objects.
+(function initHistory(){
+ const track=$('historyTrack'),dots=$('historyDots'),counter=$('historyCounter');if(!track||!dots||!counter)return;
+ const historyItems=PROJECTS.map((p)=>({...p}));let active=0,timer=null,hovering=false;
+ const safe=(value)=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+ const render=()=>{
+  if(!historyItems.length){track.innerHTML='<p>Projects will appear here soon.</p>';return;}
+  const n=historyItems.length;const indexes=[(active-1+n)%n,active,(active+1)%n];
+  track.innerHTML=indexes.map((idx,pos)=>{const p=historyItems[idx];return `<article class="history-card ${pos===1?'active':'side'}" aria-label="Project ${String(p.slideNumber).padStart(2,'0')}: ${safe(p.name)}"><div class="history-card-number">${String(p.slideNumber).padStart(2,'0')} / ${String(n).padStart(2,'0')}</div><div class="history-card-visual">${p.image?`<img src="${safe(p.image)}" alt="" loading="lazy" onerror="this.style.display='none'">`:'✦'}</div><h3>${safe(p.name)}</h3><p>${safe(p.description)}</p><a class="history-link" href="${safe(p.url)}" target="_blank" rel="noopener noreferrer">EXPLORE PROJECT ↗</a></article>`;}).join('');
+  counter.textContent=`${String(active+1).padStart(2,'0')} / ${String(n).padStart(2,'0')}`;
+  dots.innerHTML=historyItems.map((p,i)=>`<button type="button" aria-label="Show project ${i+1}" aria-current="${i===active?'true':'false'}" data-history-index="${i}"></button>`).join('');
+ };
+ const go=idx=>{active=(idx+historyItems.length)%historyItems.length;render();};
+ $('historyPrev')?.addEventListener('click',()=>go(active-1));$('historyNext')?.addEventListener('click',()=>go(active+1));dots.addEventListener('click',e=>{const b=e.target.closest('[data-history-index]');if(b)go(Number(b.dataset.historyIndex));});
+ const wrap=track.closest('.history-wrap');wrap?.addEventListener('mouseenter',()=>{hovering=true;});wrap?.addEventListener('mouseleave',()=>{hovering=false;});wrap?.addEventListener('focusin',()=>{hovering=true;});wrap?.addEventListener('focusout',()=>{hovering=false;});
+ const years=$('historyYears');if(years){const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'Africa/Lagos',year:'numeric'}).formatToParts(new Date());const year=Number(parts.find(p=>p.type==='year')?.value||new Date().getFullYear());years.textContent=String(Math.max(0,year-2024));}
+ render();if(!reducedMotion)timer=window.setInterval(()=>{if(!hovering&&document.visibilityState==='visible')go(active+1);},5000);
+})();
+
+PROJECTS.forEach((project, index) => { project.slideNumber = index + 1; });
+
 const projectGrid = document.getElementById("projectGrid");
 const previewModal = document.getElementById("previewModal");
 const modalImage = document.getElementById("modalImage");

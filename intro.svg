@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-labelledby="title desc">
+  <title id="title">DEVZIKKY TECH cosmic atom</title><desc id="desc">Glowing cyan, violet and magenta electron orbits surrounding DEVZIKKY TECH.</desc>
+  <defs>
+    <radialGradient id="core"><stop stop-color="#fff"/><stop offset=".36" stop-color="#00f5ff"/><stop offset="1" stop-color="#8d4dff"/></radialGradient>
+    <linearGradient id="cyan"><stop stop-color="#00f5ff" stop-opacity=".25"/><stop offset=".5" stop-color="#00f5ff"/><stop offset="1" stop-color="#00f5ff" stop-opacity=".25"/></linearGradient>
+    <linearGradient id="violet"><stop stop-color="#a56cff" stop-opacity=".2"/><stop offset=".5" stop-color="#c9a7ff"/><stop offset="1" stop-color="#a56cff" stop-opacity=".2"/></linearGradient>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <g fill="none" stroke-width="2.4" filter="url(#glow)">
+    <ellipse cx="160" cy="160" rx="125" ry="48" stroke="url(#cyan)" transform="rotate(-38 160 160)"><animateTransform attributeName="transform" type="rotate" from="-38 160 160" to="322 160 160" dur="7s" repeatCount="indefinite"/></ellipse>
+    <ellipse cx="160" cy="160" rx="125" ry="48" stroke="url(#violet)" transform="rotate(38 160 160)"><animateTransform attributeName="transform" type="rotate" from="38 160 160" to="-322 160 160" dur="9s" repeatCount="indefinite"/></ellipse>
+    <ellipse cx="160" cy="160" rx="125" ry="48" stroke="#ff4bd8" stroke-opacity=".7" transform="rotate(90 160 160)"><animateTransform attributeName="transform" type="rotate" from="90 160 160" to="450 160 160" dur="11s" repeatCount="indefinite"/></ellipse>
+  </g>
+  <g filter="url(#glow)"><circle cx="160" cy="160" r="15" fill="url(#core)"><animate attributeName="r" values="13;17;13" dur="1.8s" repeatCount="indefinite"/></circle><circle cx="160" cy="160" r="24" fill="none" stroke="#00f5ff" stroke-opacity=".35"><animate attributeName="r" values="20;29;20" dur="1.8s" repeatCount="indefinite"/></circle></g>
+  <g fill="#fff" filter="url(#glow)"><circle cx="82" cy="95" r="4"><animate attributeName="opacity" values="1;.45;1" dur="2s" repeatCount="indefinite"/></circle><circle cx="236" cy="112" r="4" fill="#b99aff"><animate attributeName="opacity" values=".45;1;.45" dur="2.6s" repeatCount="indefinite"/></circle><circle cx="204" cy="241" r="3.5" fill="#ff9bea"><animate attributeName="opacity" values="1;.35;1" dur="2.2s" repeatCount="indefinite"/></circle></g>
+</svg>
