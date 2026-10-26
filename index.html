@@ -1466,7 +1466,80 @@ body.light-theme .desktop-nav a:hover{background:rgba(0,190,210,.09)}
 @media(max-width:380px){.theme-toggle{margin-right:0}.history-card-number{font-size:.5rem}.history-card{padding:6px}.history-card-visual{height:46px}.video-fab span{max-width:86px;overflow:hidden;text-overflow:ellipsis}}
 @media(prefers-reduced-motion:reduce){.history-card,.desktop-nav{transition:none!important}}
 
-  </style>
+/* 🔷 DEVZIKKY TECH — Blue About Cards: LIGHT MODE ONLY */
+body.light-theme .about-layout .feature-panel.about-main,
+body.light-theme .about-layout .feature-panel.about-side {
+  background: linear-gradient(135deg, #071a3d, #003b8e, #0066ff) !important;
+  border: 1px solid rgba(70, 150, 255, 0.7) !important;
+  border-radius: 20px;
+  box-shadow: 0 0 22px rgba(0, 102, 255, 0.3);
+  color: #ffffff !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ✨ White text inside About cards */
+body.light-theme .about-layout .feature-panel.about-main h3,
+body.light-theme .about-layout .feature-panel.about-main p,
+body.light-theme .about-layout .feature-panel.about-main li,
+body.light-theme .about-layout .feature-panel.about-side h3,
+body.light-theme .about-layout .feature-panel.about-side p,
+body.light-theme .about-layout .feature-panel.about-side li {
+  color: #ffffff !important;
+}
+
+/* 💠 Cyan icons */
+body.light-theme .about-layout .feature-panel .panel-icon,
+body.light-theme .about-layout .feature-panel .panel-icon i {
+  color: #70d6ff !important;
+}
+
+/* 🚀 About card hover glow */
+body.light-theme .about-layout .feature-panel.about-main:hover,
+body.light-theme .about-layout .feature-panel.about-side:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0, 102, 255, 0.4);
+  border-color: #70d6ff !important;
+}
+
+/* 🔷 Profile Stamp — LIGHT MODE ONLY */
+body.light-theme .profile-stamp {
+  background: linear-gradient(135deg, #061633, #073b83, #005bea) !important;
+  border: 1px solid rgba(80, 170, 255, 0.8) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 28px rgba(0, 102, 255, 0.3);
+}
+
+/* 🤍 Profile Stamp text */
+body.light-theme .profile-stamp .stamp-label,
+body.light-theme .profile-stamp .stamp-row,
+body.light-theme .profile-stamp .stamp-row span,
+body.light-theme .profile-stamp .stamp-row strong {
+  color: #ffffff !important;
+}
+
+/* 💠 Cyan profile label */
+body.light-theme .profile-stamp .stamp-label {
+  color: #70d6ff !important;
+}
+
+/* 🟢 Online indicator */
+body.light-theme .profile-stamp .live-state {
+  color: #7dffb3 !important;
+}
+
+/* ✨ Profile divider */
+body.light-theme .profile-stamp .stamp-divider {
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  background-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+/* 🚀 Profile hover glow */
+body.light-theme .profile-stamp:hover {
+  box-shadow: 0 0 38px rgba(0, 102, 255, 0.5);
+  border-color: #70d6ff !important;
+}
+
+</style>
 </head>
 
 <body>
@@ -1538,46 +1611,52 @@ body.light-theme .desktop-nav a:hover{background:rgba(0,190,210,.09)}
         </div>
       </div>
 
-      <aside class="profile-stamp reveal" aria-label="Developer profile">
-        <div class="stamp-top">
-          <span class="mono stamp-label">DEVZIKKY TECH / PROFILE</span>
-          <span class="live-state"><span></span> ONLINE</span>
-        </div>
+<aside class="profile-stamp reveal" aria-label="Developer profile">
+  <div class="stamp-top">
+    <span class="mono stamp-label">🔷 DEVZIKKY TECH / PROFILE 🚀</span>
+    <span class="live-state"><span></span> 🟢 ONLINE</span>
+  </div>
 
-        <div class="stamp-divider"></div>
+  <div class="stamp-divider"></div>
 
-        <div class="stamp-rows">
-          <div class="stamp-row">
-            <span>Owner</span>
-            <strong>DEVZIKKY</strong>
-          </div>
-          <div class="stamp-row">
-            <span>Location</span>
-            <strong>Lagos, Nigeria</strong>
-          </div>
-          <div class="stamp-row">
-            <span>Local time</span>
-            <strong id="stampClock">--:--:-- WAT</strong>
-          </div>
-          <div class="stamp-row">
-            <span>Build environment</span>
-            <strong>Android · Termux</strong>
-          </div>
-          <div class="stamp-row">
-            <span>Main focus</span>
-            <strong>Web · APIs · AI · Bots</strong>
-          </div>
-          <div class="stamp-row">
-            <span>Profile</span>
-            <strong>14+ projects · 6+ bots</strong>
-          </div>
-          <div class="stamp-row">
-            <span>Known for</span>
-            <strong>Building from Android</strong>
-          </div>
-        </div>
-      </aside>
-    </section>
+  <div class="stamp-rows">
+    <div class="stamp-row">
+      <span>👑 Owner</span>
+      <strong>🧑‍💻 DEVZIKKY</strong>
+    </div>
+
+    <div class="stamp-row">
+      <span>📍 Location</span>
+      <strong>🌍 Lagos, Nigeria 🇳🇬</strong>
+    </div>
+
+    <div class="stamp-row">
+      <span>🕒 Local time</span>
+      <strong id="stampClock">--:--:-- WAT</strong>
+    </div>
+
+    <div class="stamp-row">
+      <span>📱 Build environment</span>
+      <strong>🤖 Android · ⚡ Termux</strong>
+    </div>
+
+    <div class="stamp-row">
+      <span>🎯 Main focus</span>
+      <strong>🌐 Web · 🔌 APIs · 🤖 AI · 🛰️ Bots</strong>
+    </div>
+
+    <div class="stamp-row">
+      <span>🏆 Profile</span>
+      <strong>📦 14+ projects · 🤖 6+ bots</strong>
+    </div>
+
+    <div class="stamp-row">
+      <span>✨ Known for</span>
+      <strong>📲 Building from Android 🚀</strong>
+    </div>
+  </div>
+</aside>
+</section>
 
     <section class="tech-rail" aria-label="Technology stack">
       <div class="section-shell rail-inner">
@@ -1598,124 +1677,149 @@ body.light-theme .desktop-nav a:hover{background:rgba(0,190,210,.09)}
     </section>
 
     <section class="section-shell content-section" id="about">
-      <div class="section-heading reveal">
-        <span class="section-kicker">01 / ABOUT</span>
-        <h2>The person behind the projects.</h2>
-        <p>A more personal look at how DEVZIKKY TECH came together.</p>
+  <div class="section-heading reveal">
+    <span class="section-kicker">🔷 01 / ABOUT 🌌</span>
+    <h2>🧑‍🚀 The person behind the projects. ⚡</h2>
+    <p>🛠️ A personal look at the ideas, experiments, and technology behind DEVZIKKY TECH. 💎</p>
+  </div>
+
+  <div class="about-layout">
+    <!-- 👨‍💻 ABOUT ME -->
+    <article class="feature-panel about-main reveal">
+      <div class="panel-icon">
+        <i class="fas fa-user-astronaut"></i>
       </div>
-
-      <div class="about-layout">
-        <article class="feature-panel about-main reveal">
-          <div class="panel-icon"><i class="fas fa-user-astronaut"></i></div>
-          <div>
-            <h3>Who I am</h3>
-            <p>
-              I’m DEVZIKKY, a developer and builder based in Lagos, Nigeria.
-              DEVZIKKY TECH is where I bring together the things I experiment
-              with: websites, APIs, AI assistants, email tools, bots,
-              automation and developer utilities.
-            </p>
-            <p>
-              I’m especially interested in taking an annoying or missing
-              little thing and turning it into a working tool. Some projects
-              start small, some grow into full systems, and the process is
-              always part of the learning.
-            </p>
-          </div>
-        </article>
-
-        <article class="feature-panel about-side reveal">
-          <div class="panel-icon cyan"><i class="fas fa-mobile-screen-button"></i></div>
-          <h3>Built from a phone</h3>
-          <p>
-            A large part of my development workflow happens on my system with
-            Termux, Git, CLI tools and cloud deployments.
-          </p>
-          <div class="mini-list">
-            <span>Code</span>
-            <span>Test</span>
-            <span>Deploy</span>
-            <span>Debug</span>
-            <span>Repeat</span>
-          </div>
-        </article>
-
-        <article class="feature-panel about-side reveal">
-          <div class="panel-icon pink"><i class="fas fa-lightbulb"></i></div>
-          <h3>How I build</h3>
-          <p>
-            I prefer practical projects over unfinished ideas: build a first
-            version, test it in the real world, find what breaks, then improve
-            the experience.
-          </p>
-          <div class="mini-list">
-            <span>Useful</span>
-            <span>Simple</span>
-            <span>Fast</span>
-            <span>Reliable</span>
-          </div>
-        </article>
+      <div>
+        <h3>👋 Who I am 🌍</h3>
+        <p>
+          🚀 I’m DEVZIKKY, a developer and builder based in Lagos, Nigeria 🇳🇬.
+          DEVZIKKY TECH is where I bring together the things I experiment
+          with: 🌐 websites, 🔌 APIs, 🤖 AI assistants, 📧 email tools, 🛰️ bots,
+          ⚙️ automation, and 🧰 developer utilities.
+        </p>
+        <p>
+          💡 I enjoy taking an annoying or missing little thing and turning
+          it into a working tool. 🛠️ Some projects start small 🌱, while others
+          grow into full systems 🏗️. Every build is another opportunity to
+          experiment 🧪, solve problems 🧩, and learn something new 🧠✨.
+        </p>
       </div>
+    </article>
 
-      <div class="identity-strip reveal">
-        <div>
-          <span class="section-kicker">KNOWN FOR</span>
-          <strong>Turning “what if?” into something you can actually open and use.</strong>
-        </div>
-        <div class="identity-pills">
-          <span>FULL-STACK</span><span>AI TINKERER</span><span>BOT BUILDER</span><span>API BUILDER</span>
-        </div>
+    <!-- 📱 BUILT FROM A PHONE -->
+    <article class="feature-panel about-side reveal">
+      <div class="panel-icon cyan">
+        <i class="fas fa-mobile-screen-button"></i>
       </div>
-    </section>
-
-    <section class="section-shell content-section" id="journey">
-      <div class="section-heading reveal">
-        <span class="section-kicker">02 / JOURNEY</span>
-        <h2>From experiments to an ecosystem.</h2>
-        <p>The work has expanded gradually across several areas of software.</p>
+      <h3>📱 Built from a phone ⚡</h3>
+      <p>
+        💻 A large part of my development workflow happens on my system using
+        📲 Termux, 🌿 Git, ⌨️ CLI tools, and ☁️ cloud deployments.
+        From writing code to launching projects 🚀, I enjoy turning ideas
+        into working software. 🔥
+      </p>
+      <div class="mini-list">
+        <span>⌨️ Code</span>
+        <span>🧪 Test</span>
+        <span>🚀 Deploy</span>
+        <span>🛠️ Debug</span>
+        <span>🔁 Repeat</span>
       </div>
+    </article>
 
-      <div class="journey-grid">
-        <article class="journey-card reveal">
-          <span class="journey-number">01</span>
-          <h3>Start small</h3>
-          <p>
-            Early experiments focused on calculators, simple web tools and
-            learning the basics by actually making things.
-          </p>
-        </article>
-
-        <article class="journey-card reveal">
-          <span class="journey-number">02</span>
-          <h3>Learn the backend</h3>
-          <p>
-            JavaScript, Node.js, Express, Python, APIs, databases and
-            deployments became part of the workflow.
-          </p>
-        </article>
-
-        <article class="journey-card reveal">
-          <span class="journey-number">03</span>
-          <h3>Explore AI & bots</h3>
-          <p>
-            AI assistants, model integrations, TTS, WhatsApp and Telegram
-            automation opened up a much larger set of ideas.
-          </p>
-        </article>
-
-        <article class="journey-card reveal">
-          <span class="journey-number">04</span>
-          <h3>Build systems</h3>
-          <p>
-            Email infrastructure, public tools, APIs, dashboards and
-            multi-project workflows now form the wider DEVZIKKY ecosystem.
-          </p>
-        </article>
+    <!-- 💡 HOW I BUILD -->
+    <article class="feature-panel about-side reveal">
+      <div class="panel-icon pink">
+        <i class="fas fa-lightbulb"></i>
       </div>
+      <h3>💡 How I build 🏗️</h3>
+      <p>
+        🎯 I prefer practical projects over unfinished ideas: build a first
+        version 🧱, test it in the real world 🌍, discover what breaks 🔍,
+        fix the problems 🔧, and keep improving the experience 📈.
+      </p>
+      <div class="mini-list">
+        <span>💎 Useful</span>
+        <span>🧩 Simple</span>
+        <span>⚡ Fast</span>
+        <span>🛡️ Reliable</span>
+      </div>
+    </article>
+  </div>
+  
+  <!-- 🏆 DEVELOPER IDENTITY -->
+  <div class="identity-strip reveal">
+    <div>
+      <span class="section-kicker">✨ KNOWN FOR 🚀</span>
+      <strong>
+        💭 Turning “what if?” into something you can actually open and use. 🔥
+      </strong>
+    </div>
+    <div class="identity-pills">
+      <span>🌐 FULL-STACK</span>
+      <span>🤖 AI TINKERER</span>
+      <span>🛰️ BOT BUILDER</span>
+      <span>🔌 API BUILDER</span>
+    </div>
+  </div>
+</section>
+
+<!-- 🚀 JOURNEY SECTION -->
+<section class="section-shell content-section" id="journey">
+  <div class="section-heading reveal">
+    <span class="section-kicker">🔹 02 / JOURNEY 🧭</span>
+    <h2>🌱 From experiments to an ecosystem. 🌌</h2>
+    <p>📈 The journey of learning, experimenting, and building across different areas of software. 💻</p>
+  </div>
+
+  <div class="journey-grid">
+    <!-- 🌱 STEP 1 -->
+    <article class="journey-card reveal">
+      <span class="journey-number">01 🌱</span>
+      <h3>🧩 Start small</h3>
+      <p>
+        🧮 Early experiments focused on calculators, simple web tools, and
+        learning the basics by actually building things. Every small project
+        was another step forward. 👣
+      </p>
+    </article>
+
+    <!-- ⚙️ STEP 2 -->
+    <article class="journey-card reveal">
+      <span class="journey-number">02 ⚙️</span>
+      <h3>🖥️ Learn the backend</h3>
+      <p>
+        📚 JavaScript, 🟢 Node.js, 🚂 Express, 🐍 Python, 🔌 APIs,
+        🗄️ databases, and ☁️ deployments became part of the workflow.
+      </p>
+    </article>
+
+    <!-- 🤖 STEP 3 -->
+    <article class="journey-card reveal">
+      <span class="journey-number">03 🤖</span>
+      <h3>🧠 Explore AI & bots</h3>
+      <p>
+        ✨ AI assistants, 🧬 model integrations, 🗣️ text-to-speech,
+        💬 WhatsApp and ✈️ Telegram automation opened the door to even
+        more creative possibilities. 🚀
+      </p>
+    </article>
+
+    <!-- 🌌 STEP 4 -->
+    <article class="journey-card reveal">
+      <span class="journey-number">04 🌌</span>
+      <h3>🏗️ Build systems</h3>
+      <p>
+        📧 Email infrastructure, 🧰 public tools, 🔌 APIs, 📊 dashboards,
+        and 🔄 multi-project workflows now form part of the wider
+        DEVZIKKY TECH ecosystem. 💙🔷
+      </p>
+    </article>
+  </div>
 
       <div class="skills-panel reveal">
         <div>
-          <span class="section-kicker">TOOLS I WORK WITH</span>
+          <span class="section-kicker">⚒️ TOOLS I WORK WITH</span>
           <h3>Technology & workflow</h3>
         </div>
         <div class="skill-cloud">
@@ -1725,7 +1829,7 @@ body.light-theme .desktop-nav a:hover{background:rgba(0,190,210,.09)}
           <span>Supabase</span><span>Firebase</span><span>Git</span>
           <span>GitHub</span><span>Vercel</span><span>Render</span>
           <span>Netlify</span><span>Termux</span><span>AI / LLMs</span>
-          <span>Automation</span><span>Responsive UI</span>
+          <span>Automation</span><span>Responsive UI & UX</span>
         </div>
       </div>
     </section>
@@ -1734,19 +1838,19 @@ body.light-theme .desktop-nav a:hover{background:rgba(0,190,210,.09)}
       <div class="section-heading reveal">
         <span class="section-kicker">🎬 DEVELOPER × EDITOR × CREATOR</span>
         <h2>Code by logic. Edit by feeling. ✨</h2>
-        <p>I'm not only building software — I'm also shaping stories through video editing and digital creativity.</p>
+        <p>I'm not only building software 😌 — I'm also a peak upcoming video editor 😏</p>
       </div>
       <div class="editor-layout glass-panel reveal">
         <div class="editor-copy">
           <span class="live-pill"><span class="status-dot"></span> CREATIVE MODE: ACTIVE</span>
-          <h3>From lines of code to frames that hit different. 🚀</h3>
-          <p>Explore my creative side, then connect with me across my platforms.</p>
+          <h3>From lines of code to edits that hit different. 🚀</h3>
+          <p>Explore my creative side, then connect with me across my platforms 😌</p>
           <div class="social-links">
-            <a class="glass-control social-youtube" href="https://m.youtube.com/@devzikky" target="_blank" rel="noopener noreferrer">▶️️ YouTube</a>
-            <a class="glass-control social-instagram" href="https://www.instagram.com/devzikky" target="_blank" rel="noopener noreferrer">📸 Instagram</a>
-            <a class="glass-control social-tiktok" href="https://www.tiktok.com/@devzikky" target="_blank" rel="noopener noreferrer">🎵 TikTok</a>
+            <a class="glass-control social-youtube" href="https://m.youtube.com/@devzikky" target="_blank" rel="noopener noreferrer">▶️️ YouTube (@devzikky)</a>
+            <a class="glass-control social-instagram" href="https://www.instagram.com/devzikky" target="_blank" rel="noopener noreferrer">📸 Instagram (@devzikky)</a>
+            <a class="glass-control social-tiktok" href="https://www.tiktok.com/@devzikky" target="_blank" rel="noopener noreferrer">🎵 TikTok (@devzikky)</a>
           </div>
-          <p class="media-status" id="videoStatus" role="status" aria-live="polite">🎥 Preparing showcase…</p>
+          <p class="media-status" id="videoStatus" role="status" aria-live="polite">🎥 Preparing Edit…</p>
         </div>
         <div class="video-shell">
           <video id="showcaseVideo" class="showcase-video" src="video.mp4" loop playsinline preload="metadata" aria-label="DEVZIKKY video editing showcase"></video>
@@ -1759,7 +1863,7 @@ body.light-theme .desktop-nav a:hover{background:rgba(0,190,210,.09)}
     <section class="section-shell content-section" id="coding-history">
       <div class="section-heading reveal">
         <span class="section-kicker">📜 THE BUILD LOG</span>
-        <h2>MY CODING HISTORY</h2>
+        <h2>📜 MY CODING HISTORY</h2>
         <p>My project history over the past <strong id="historyYears">2</strong> years — one idea at a time. 💻</p>
       </div>
       <div class="history-wrap reveal">
@@ -1770,18 +1874,18 @@ body.light-theme .desktop-nav a:hover{background:rgba(0,190,210,.09)}
     </section>
 
     <section class="section-shell content-section" id="media-gallery">
-      <div class="section-heading reveal"><span class="section-kicker">🪄 EDITING LAB 🎬</span><h2>From small clips to « <strong>Big creativity</strong> »⚡</h2><p>My <strong>Separate</strong> life from ⭕ coding is being an <strong>EDITOR</strong>🔥 </p></div>
+      <div class="section-heading reveal"><span class="section-kicker">🪄 EDITING LAB 🎬</span><h2>From small clips to « <strong>Big creativity</strong> »⚡</h2><p>🤫 My <strong>Separate</strong> 🌚 life from ⭕ coding is being an <strong>EDITOR</strong>🔥 </p></div>
       <div class="media-grid">
-        <article class="media-card glass-panel reveal"><div class="media-card-heading"><span>🎞️ ONE PIECE EDIT</span><span class="media-badge">OUTRO</span></div><div class="gif-frame"><img id="outroGif" src="outro.gif" alt="DEVZIKKY animated outro" loading="lazy"></div><button class="glass-control media-toggle" id="gifToggle" type="button" aria-pressed="false">Ⅱ PAUSE GIF</button><p class="media-status" id="gifStatus" role="status">✨ EDIT OF MY FAVOURITE ANIME 😊</p></article>
-        <article class="media-card glass-panel reveal"><div class="media-card-heading"><span>🖼️ ICON BANNER</span><span class="media-badge">VISUAL</span></div><div class="banner-frame"><object id="bannerObject" data="banner.svg" type="image/svg+xml" aria-label="DEVZIKKY animated SVG banner"></object><img id="bannerFallback" src="banner.svg" alt="DEVZIKKY banner" hidden></div><button class="glass-control media-toggle" id="bannerToggle" type="button" aria-pressed="false">Ⅱ PAUSE BANNER</button><p class="media-status" id="bannerStatus" role="status">💫 Banner ready</p></article>
+        <article class="media-card glass-panel reveal"><div class="media-card-heading"><span>🎞️ ONE PIECE EDIT</span><span class="media-badge">OUTRO</span></div><div class="gif-frame"><img id="outroGif" src="outro.gif" alt="DEVZIKKY animated outro" loading="lazy"></div><button class="glass-control media-toggle" id="gifToggle" type="button" aria-pressed="false">⏸️ PAUSE GIF</button><p class="media-status" id="gifStatus" role="status">✨ EDIT OF MY FAVOURITE ANIME 😊</p></article>
+        <article class="media-card glass-panel reveal"><div class="media-card-heading"><span>🧧 ICON BANNER</span><span class="media-badge">VISUAL</span></div><div class="banner-frame"><object id="bannerObject" data="banner.svg" type="image/svg+xml" aria-label="DEVZIKKY animated SVG banner"></object><img id="bannerFallback" src="banner.svg" alt="DEVZIKKY banner" hidden></div><button class="glass-control media-toggle" id="bannerToggle" type="button" aria-pressed="false">⏸️ PAUSE BANNER</button><p class="media-status" id="bannerStatus" role="status">💌 Banner Active</p></article>
       </div>
     </section>
 
     <section class="section-shell content-section" id="projects">
       <div class="section-heading reveal">
         <span class="section-kicker">03 / PROJECTS</span>
-        <h2>A selection of things I’ve built.</h2>
-        <p>Open a project, inspect its preview, or filter the collection.</p>
+        <h2>🏷️ A selection of things I’ve built 😌</h2>
+        <p>💙 Open a project, tap to see preview, or filter the collection 💙</p>
       </div>
 
       <div class="filter-bar reveal" role="group" aria-label="Project filters">
@@ -1803,19 +1907,19 @@ body.light-theme .desktop-nav a:hover{background:rgba(0,190,210,.09)}
       </div>
 
       <div class="principle-grid">
-        <article class="principle-card reveal"><span>01</span><i class="fas fa-wand-magic-sparkles"></i><h3>Make the idea real.</h3><p>An idea becomes interesting when someone can actually click it, use it, test it or break it.</p></article>
-        <article class="principle-card reveal"><span>02</span><i class="fas fa-bug-slash"></i><h3>Errors are data.</h3><p>Failed deployments and stubborn bugs become information about how the system really behaves.</p></article>
-        <article class="principle-card reveal"><span>03</span><i class="fas fa-layer-group"></i><h3>Learn by building.</h3><p>Each project becomes a practical lesson in APIs, sessions, auth, databases, deployment or UI.</p></article>
-        <article class="principle-card reveal"><span>04</span><i class="fas fa-heart"></i><h3>Useful beats impressive.</h3><p>The goal is a tool someone can actually use, not just a screenshot that looks good.</p></article>
+        <article class="principle-card reveal"><span>01</span><i class="fas fa-wand-magic-sparkles"></i><h3>♨️ Make the idea real.</h3><p>⭕ An idea becomes interesting when someone can actually click it, use it, test it or break it ⭕</p></article>
+        <article class="principle-card reveal"><span>02</span><i class="fas fa-bug-slash"></i><h3>😱 Errors are data.</h3><p>Failed deployments and stubborn bugs become information about how the system really behaves 🥲</p></article>
+        <article class="principle-card reveal"><span>03</span><i class="fas fa-layer-group"></i><h3>😏 Learn by building.</h3><p>Each project becomes a practical lesson in APIs, sessions, auth, databases, deployment or UI 🔰</p></article>
+        <article class="principle-card reveal"><span>04</span><i class="fas fa-heart"></i><h3>🥶 Useful skills beats impressive AI</h3><p>The goal is a tool someone can actually use, not just a screenshot that looks good 🔋</p></article>
       </div>
 
       <div class="manifesto reveal">
         <div class="manifesto-mark">DZ</div>
-        <div><span class="section-kicker">THE LOOP</span><h3>Imagine → Build → Test → Break → Understand → Improve → Ship.</h3><p>No grand finish line. Just a better version of the thing than existed yesterday.</p></div>
+        <div><span class="section-kicker">🈴 THE CYCLE</span><h3>Imagine → Build → Test → Break → Understand → Improve → Ship.</h3><p>No grand finish line. Just a better version of the thing than existed yesterday 🤞</p></div>
       </div>
 
       <div class="toolbox-grid reveal">
-        <div class="toolbox-group"><span class="toolbox-icon"><i class="fas fa-code"></i></span><h3>Build</h3><div class="tag-cloud"><span>JavaScript</span><span>TypeScript</span><span>Node.js</span><span>Python</span><span>HTML/CSS</span><span>Express</span><span>REST</span><span>GraphQL</span></div></div>
+        <div class="toolbox-group"><span class="toolbox-icon"><i class="fas fa-code"></i></span><h3>🏷️ Build</h3><div class="tag-cloud"><span>JavaScript</span><span>TypeScript</span><span>Node.js</span><span>Python</span><span>HTML/CSS</span><span>Express</span><span>REST</span><span>GraphQL</span></div></div>
         <div class="toolbox-group"><span class="toolbox-icon"><i class="fas fa-brain"></i></span><h3>Think</h3><div class="tag-cloud"><span>AI / LLMs</span><span>Prompt Engineering</span><span>Model Orchestration</span><span>TTS / Voice AI</span><span>Automation</span></div></div>
         <div class="toolbox-group"><span class="toolbox-icon"><i class="fas fa-server"></i></span><h3>Deploy</h3><div class="tag-cloud"><span>Vercel</span><span>Render</span><span>Netlify</span><span>Supabase</span><span>Firebase</span><span>GitHub</span><span>Termux</span></div></div>
         <div class="toolbox-group"><span class="toolbox-icon"><i class="fas fa-shield-halved"></i></span><h3>Engineer</h3><div class="tag-cloud"><span>API Auth</span><span>Sessions</span><span>Rate Limiting</span><span>System Design</span><span>Custom Domains</span><span>CLI</span></div></div>
@@ -1825,7 +1929,7 @@ body.light-theme .desktop-nav a:hover{background:rgba(0,190,210,.09)}
     <section class="section-shell content-section" id="contact">
       <div class="section-heading reveal">
         <span class="section-kicker">04 / CONTACT</span>
-        <h2>Find the work. Reach the developer.</h2>
+        <h2>☎️ Find the work. Reach the developer.</h2>
         <p>Public links and project destinations in one place.</p>
       </div>
 
@@ -1899,19 +2003,19 @@ body.light-theme .desktop-nav a:hover{background:rgba(0,190,210,.09)}
       </div>
     </section>
   </main>
-
+  
   <footer class="site-footer">
-    <div class="section-shell footer-inner">
-      <div>
-        <div class="footer-brand">DEVZIKKY TECH</div>
-        <p>Built from Lagos. Built by curiosity. Built to ship.</p>
-      </div>
-      <div class="footer-meta">
-        <span id="footerClock">--:--:-- WAT</span>
-        <span>© 2026 DEVZIKKY TECH</span>
-      </div>
-    </div>
-  </footer>
+  <div class="section-shell footer-inner">
+    <div>
+      <div class="footer-brand">🔰 DEVZIKKY TECH 🔰</div>
+      <p>♦ Built from Lagos. Built by curiosity. Built to ship ♦</p>
+    </div><div class="footer-meta">
+  <span id="footerClock">--:--:-- WAT</span>
+  <span>♦ © <span id="copyrightYear">2026</span> DEVZIKKY TECH ♦</span>
+</div>
+  </div>
+</footer>
+
 
   <button class="ai-fab" id="aiFab" type="button" aria-label="Open DEVZIKKY AI">
     <span class="fab-orbit orbit-one"></span>
@@ -1936,7 +2040,7 @@ body.light-theme .desktop-nav a:hover{background:rgba(0,190,210,.09)}
     </div>
   </div>
 
-  <button id="videoFab" class="video-fab glass-control" type="button" aria-label="Pause showcase video" aria-pressed="false">Ⅱ <span>PAUSE SHOWCASE</span></button>
+  <button id="videoFab" class="video-fab glass-control" type="button" aria-label="Pause showcase video" aria-pressed="false">⏸️ <span>PAUSE SHOWCASE</span></button>
   <div class="intro-screen" id="introScreen" role="status" aria-live="polite">
     <div class="intro-stars" aria-hidden="true"></div>
     <div class="intro-atom" aria-hidden="true"><img class="intro-svg" src="intro.svg" alt=""></div>
@@ -2087,8 +2191,8 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matc
 (function initShowcaseVideo(){
  const video=$('showcaseVideo'),fab=$('videoFab'),center=$('videoCenterPlay'),status=$('videoStatus');if(!video||!fab)return;
  let userPaused=false;
- const paint=()=>{const playing=!video.paused&&!video.ended;fab.innerHTML=playing?'Ⅱ <span>PAUSE SHOWCASE</span>':'▶️ <span>RESUME SHOWCASE</span>';fab.setAttribute('aria-pressed',String(!playing));fab.setAttribute('aria-label',playing?'Pause showcase video':'Resume showcase video');center.hidden=playing;};
- const play=async()=>{userPaused=false;try{await video.play();status.textContent='🎬 Showcase playing — looping enabled.';}catch(err){status.textContent=video.error?'⚠️ VIDEO UNAVAILABLE — check that video.mp4 is beside index.html.':'🔊 Tap play to allow video and audio playback in this browser.';center.hidden=false;}paint();};
+ const paint=()=>{const playing=!video.paused&&!video.ended;fab.innerHTML=playing?'⏸️ <span>PAUSE SHOWCASE</span>':'▶️ <span>RESUME PLAYING</span>';fab.setAttribute('aria-pressed',String(!playing));fab.setAttribute('aria-label',playing?'Pause showcase video':'Resume showcase video');center.hidden=playing;};
+ const play=async()=>{userPaused=false;try{await video.play();status.textContent='🎬 Video playing enabled 🔥';}catch(err){status.textContent=video.error?'⚠️ VIDEO UNAVAILABLE — check that video.mp4 is available 😱':'🔊 Tap play to allow video and audio playback in this browser.';center.hidden=false;}paint();};
  const pause=()=>{userPaused=true;video.pause();paint();status.textContent='⏸️ Showcase paused by you.';};
  fab.addEventListener('click',()=>video.paused?play():pause());center?.addEventListener('click',play);
  video.addEventListener('play',paint);video.addEventListener('pause',paint);video.addEventListener('ended',()=>{if(!userPaused)play();});
@@ -2109,12 +2213,13 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matc
    try{const c=document.createElement('canvas');c.width=img.naturalWidth||640;c.height=img.naturalHeight||360;c.getContext('2d').drawImage(img,0,0,c.width,c.height);frameUrl=c.toDataURL('image/png');img.src=frameUrl;status.textContent='⏸️ GIF paused.';}
    catch{status.textContent='ℹ️ This browser could not freeze the GIF frame; playback may continue.';paused=false;}
   }else{if(frameUrl){img.src='outro.gif';frameUrl=null;}status.textContent='✨ GIF looping.';}
-  btn.innerHTML=paused?'▶️ PLAY GIF':'Ⅱ PAUSE GIF';btn.setAttribute('aria-pressed',String(paused));
+  btn.innerHTML=paused?'▶️ PLAY GIF':'⏸️ PAUSE GIF';btn.setAttribute('aria-pressed',String(paused));
  };
- btn.addEventListener('click',()=>setPaused(!paused));img.addEventListener('error',()=>{status.textContent='⚠️ GIF UNAVAILABLE — check that outro.gif is beside index.html.';btn.disabled=true;});
+ btn.addEventListener('click',()=>setPaused(!paused));img.addEventListener('error',()=>{status.textContent='⚠️ GIF UNAVAILABLE — check that outro.gif is index.html.';btn.disabled=true;});
 })();
 
 // SVG banner controls: pause CSS/SVG animation where same-origin object access allows it.
+
 (function initBannerControl(){
  const obj=$('bannerObject'),fallback=$('bannerFallback'),btn=$('bannerToggle'),status=$('bannerStatus');if(!obj||!btn)return;
  let paused=false;
@@ -2122,13 +2227,14 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matc
   try{const doc=obj.contentDocument;if(doc){doc.documentElement.style.animationPlayState=paused?'paused':'running';doc.querySelectorAll('*').forEach(el=>{el.style.animationPlayState=paused?'paused':'running';el.style.webkitAnimationPlayState=paused?'paused':'running';});const svg=doc.documentElement;if(svg.pauseAnimations&&svg.unpauseAnimations){paused?svg.pauseAnimations():svg.unpauseAnimations();}}}catch{}
   // CSS animation pause can be applied to the embedded object's element itself.
   obj.style.animationPlayState=paused?'paused':'running';obj.style.filter=paused?'saturate(.65)':'none';
-  btn.innerHTML=paused?'▶️ PLAY BANNER':'Ⅱ PAUSE BANNER';btn.setAttribute('aria-pressed',String(paused));status.textContent=paused?'⏸️ Banner paused where supported.':'💫 Banner animation enabled.';
+  btn.innerHTML=paused?'▶️ PLAY BANNER':'⏸️ PAUSE BANNER';btn.setAttribute('aria-pressed',String(paused));status.textContent=paused?'⏸️ Banner paused where supported.':'💫 Banner animation enabled.';
  };
  btn.addEventListener('click',()=>{paused=!paused;apply();});obj.addEventListener('error',()=>{obj.hidden=true;fallback.hidden=false;status.textContent='⚠️ Banner loaded as a static image; embedded animation controls may be limited.';});
  obj.addEventListener('load',()=>{if(paused)apply();});
 })();
 
 // Coding history uses existing PROJECTS order. Assign stable slide numbers BEFORE rendering.
+
 PROJECTS.forEach((project, index) => { project.slideNumber = index + 1; });
 (function initHistory(){
  const track=$('historyTrack'),dots=$('historyDots'),counter=$('historyCounter');if(!track||!dots||!counter)return;
@@ -2212,23 +2318,37 @@ window.addEventListener("resize", () => {
 });
 
 function updateWAT() {
-  const now = new Date();
+const time = new Intl.DateTimeFormat("en-GB", {
+timeZone: "Africa/Lagos",
+hour: "2-digit",
+minute: "2-digit",
+second: "2-digit",
+hour12: false
+}).format(new Date());
 
-  const time = new Intl.DateTimeFormat("en-GB", {
-    timeZone: "Africa/Lagos",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-    hour12: false
-  }).format(now);
+const displayTime = "${time} WAT";
 
-  document.getElementById("heroClock").textContent = `${time} WAT`;
-  document.getElementById("stampClock").textContent = `${time} WAT`;
-  document.getElementById("footerClock").textContent = `${time} WAT`;
+["heroClock", "stampClock", "footerClock"].forEach((id) => {
+const element = document.getElementById(id);
+if (element) element.textContent = displayTime;
+});
+}
+
+function updateCopyrightYear() {
+const element = document.getElementById("copyrightYear");
+if (!element) return;
+
+element.textContent = new Intl.DateTimeFormat("en", {
+timeZone: "Africa/Lagos",
+year: "numeric"
+}).format(new Date());
 }
 
 updateWAT();
 setInterval(updateWAT, 1000);
+
+updateCopyrightYear();
+setInterval(updateCopyrightYear, 60 * 60 * 1000);
 
 function projectCard(project) {
   return `
@@ -2450,12 +2570,12 @@ document.addEventListener("pointerdown", (event) => {
 
 observeReveals();
 
-/* ── Auto-updating age ───────────────────────────────────────────
+/* ── Auto-updating age ─────────────────────────────────────
  * Birthday: January 8, 2010 (Lagos, UTC+1).
  * Age increments every year on January 8 at 01:00 WAT.
  *
  * Anchor: on 2010-01-08 01:00 WAT, age = 0.
- * ──────────────────────────────────────────────────────────────*/
+ * ─────────────────────────────────────*/
 (function updateAge() {
   const LAGOS_OFFSET_MS = 60 * 60 * 1000; // UTC+1
 
@@ -2495,46 +2615,3 @@ observeReveals();
 </html>
 
 
-
-/* ── Final polish: blue About cards + gold text + restored tap pulse ── */
-.about-layout .feature-panel.about-side{
-  position:relative;
-  isolation:isolate;
-  color:#ffe2a0;
-  background:linear-gradient(135deg,rgba(10,65,135,.96),rgba(13,31,79,.96) 58%,rgba(24,36,94,.94));
-  border:1px solid rgba(72,174,255,.48);
-  box-shadow:0 12px 34px rgba(0,78,190,.2),inset 0 1px rgba(255,255,255,.12),0 0 24px rgba(0,157,255,.08);
-}
-.about-layout .feature-panel.about-side::before{
-  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background:radial-gradient(circle at 90% 0%,rgba(0,245,255,.17),transparent 38%),linear-gradient(110deg,transparent,rgba(255,196,76,.035),transparent);
-}
-.about-layout .feature-panel.about-side h3,
-.about-layout .feature-panel.about-side p,
-.about-layout .feature-panel.about-side .mini-list span,
-.about-layout .feature-panel.about-side .panel-icon,
-.about-layout .feature-panel.about-side .panel-icon i{
-  color:#ffd27a;
-  animation:aboutGoldShift 2s ease-in-out infinite alternate;
-  text-shadow:0 0 12px rgba(255,184,56,.13);
-}
-.about-layout .feature-panel.about-side p{color:#ffe8b6;}
-.about-layout .feature-panel.about-side .mini-list span{
-  background:rgba(3,15,42,.42);border-color:rgba(255,204,102,.35);color:#ffd27a;
-}
-.about-layout .feature-panel.about-side .panel-icon{
-  background:linear-gradient(135deg,rgba(0,204,255,.22),rgba(255,184,56,.15));
-  border:1px solid rgba(255,204,102,.3);
-}
-@keyframes aboutGoldShift{
-  0%{color:#ffb84d;text-shadow:0 0 7px rgba(255,184,77,.12)}
-  100%{color:#ffe7a3;text-shadow:0 0 16px rgba(255,204,102,.32)}
-}
-.tap-flash{width:24px;height:24px;border:1.5px solid var(--secondary,#00f5ff);box-shadow:0 0 12px rgba(0,245,255,.18);will-change:transform,opacity}
-.tap-flash.show{animation:tapFlash 1.5s cubic-bezier(.16,.75,.25,1) forwards}
-@keyframes tapFlash{
-  0%{opacity:.95;transform:translate(-50%,-50%) scale(.2);box-shadow:0 0 0 rgba(0,245,255,0)}
-  35%{opacity:.75;box-shadow:0 0 18px rgba(0,245,255,.28)}
-  100%{opacity:0;transform:translate(-50%,-50%) scale(3.2);box-shadow:0 0 34px rgba(0,245,255,.08)}
-}
-@media(prefers-reduced-motion:reduce){.about-layout .feature-panel.about-side h3,.about-layout .feature-panel.about-side p,.about-layout .feature-panel.about-side .mini-list span,.about-layout .feature-panel.about-side .panel-icon,.about-layout .feature-panel.about-side .panel-icon i{animation:none}}
