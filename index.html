@@ -2488,7 +2488,7 @@ PROJECTS.forEach((project, index) => { project.slideNumber = index + 1; });
  $('historyPrev')?.addEventListener('click',()=>go(active-1));$('historyNext')?.addEventListener('click',()=>go(active+1));dots.addEventListener('click',e=>{const b=e.target.closest('[data-history-index]');if(b)go(Number(b.dataset.historyIndex));});
  const wrap=track.closest('.history-wrap');wrap?.addEventListener('mouseenter',()=>{hovering=true;});wrap?.addEventListener('mouseleave',()=>{hovering=false;});wrap?.addEventListener('focusin',()=>{hovering=true;});wrap?.addEventListener('focusout',()=>{hovering=false;});wrap?.addEventListener('touchstart',()=>{hovering=true;},{passive:true});wrap?.addEventListener('touchend',()=>{window.setTimeout(()=>{hovering=false;},1200);},{passive:true});
  const years=$('historyYears');if(years){const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'Africa/Lagos',year:'numeric'}).formatToParts(new Date());const year=Number(parts.find(p=>p.type==='year')?.value||new Date().getFullYear());years.textContent=String(Math.max(0,year-2024));}
- render();if(!reducedMotion)timer=window.setInterval(()=>{if(!hovering&&document.visibilityState==='visible')go(active+1);},5000);
+ render();if(!reducedMotion)timer=window.setInterval(()=>{if(!hovering&&document.visibilityState==='visible')go(active+1);},3000);
 })();
 
 const projectGrid = document.getElementById("projectGrid");
