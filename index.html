@@ -1513,10 +1513,33 @@ h3 {
 .media-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: stretch; }
 .media-card { display: flex; flex-direction: column; min-width: 0; padding: 18px; }
 .media-card-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; font: 600 .72rem "IBM Plex Mono", monospace; }
-.gif-frame, .banner-frame { display: grid; place-items: center; width: 100%; overflow: hidden; border: 1px solid rgba(0,245,255,.18); border-radius: 14px; background: rgba(0,0,0,.35); }
-.gif-frame { aspect-ratio: 16 / 9; min-height: 150px; margin-bottom: 14px; }
-.banner-frame { aspect-ratio: 900 / 160; min-height: 150px; max-height: 260px; margin-bottom: 14px; }
-.gif-frame img, .banner-frame object, .banner-frame img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.media-frame {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  min-height: 150px;
+  margin-bottom: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(0,245,255,.18);
+  border-radius: 14px;
+  background: rgba(0,0,0,.35);
+}
+.media-frame img.gif {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% 60%;
+}
+.media-frame object.banner,
+.media-frame img.banner {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
 .media-toggle { width: 100%; margin-top: auto; }
 
 /* Coding history ----------------------------------------------------------- */
@@ -1607,7 +1630,7 @@ body.light-theme .glass-control { color: #18253b; background: rgba(255,255,255,.
 body.light-theme p, body.light-theme .history-card p, body.light-theme .editor-copy p, body.light-theme .media-status { color: #52627b; }
 body.light-theme h1, body.light-theme h2, body.light-theme h3, body.light-theme strong, body.light-theme .desktop-nav a { color: #172238; }
 body.light-theme .tag-cloud span, body.light-theme .identity-pills span { background: rgba(255,255,255,.82); color: #26364f; }
-body.light-theme .banner-frame, body.light-theme .gif-frame, body.light-theme .video-shell { background: #e8eef9; }
+body.light-theme .media-frame, body.light-theme .video-shell { background: #e8eef9; }
 body.light-theme .video-fab { color: #172238; background: rgba(255,255,255,.96); border-color: rgba(0,160,190,.4); }
 body.light-theme .desktop-nav.open, body.light-theme .desktop-nav.nav-open { background: rgba(248,251,255,.98); border-color: rgba(72,105,160,.25); }
 body.light-theme .desktop-nav a:hover { background: rgba(0,190,210,.09); }
@@ -1669,8 +1692,7 @@ body.light-theme .media-card .glass-control {
   background: rgba(3,25,76,.34);
   border-color: rgba(176,235,255,.52);
 }
-body.light-theme .gif-frame,
-body.light-theme .banner-frame,
+body.light-theme .media-frame,
 body.light-theme .video-shell {
   border-color: rgba(166,232,255,.5);
   background: rgba(2,20,63,.5);
@@ -2068,13 +2090,13 @@ body.light-theme .video-shell {
     <section class="section-shell content-section" id="media-gallery">
       <div class="section-heading reveal"><span class="section-kicker">🪄 EDITING LAB 🎬</span><h2>From small clips to « <strong>Big creativity</strong> »⚡</h2><p>🤫 Outside coding, my creative side is video editing <strong>🎬</strong>🔥 </p></div>
       <div class="media-grid">
-        <article class="media-card glass-panel reveal"><div class="media-card-heading"><span>🎞️ ONE PIECE EDIT</span><span class="media-badge">OUTRO</span></div><div class="gif-frame"><img id="outroGif" src="outro.gif" alt="DEVZIKKY animated outro" loading="lazy"></div><button class="glass-control media-toggle" id="gifToggle" type="button" aria-pressed="false">⏸️ PAUSE GIF</button><p class="media-status" id="gifStatus" role="status">✨ EDIT OF MY FAVOURITE ANIME 😊</p></article>
-        <article class="media-card glass-panel reveal"><div class="media-card-heading"><span>🧧 ICON BANNER</span><span class="media-badge">VISUAL</span></div><div class="banner-frame"><object
+        <article class="media-card glass-panel reveal"><div class="media-card-heading"><span>🎞️ ONE PIECE EDIT</span><span class="media-badge">OUTRO</span></div><div class="media-frame"><img class="gif" id="outroGif" src="outro.gif" alt="DEVZIKKY animated outro" loading="lazy"></div><button class="glass-control media-toggle" id="gifToggle" type="button" aria-pressed="false">⏸️ PAUSE GIF</button><p class="media-status" id="gifStatus" role="status">✨ EDIT OF MY FAVOURITE ANIME 😊</p></article>
+        <article class="media-card glass-panel reveal"><div class="media-card-heading"><span>🧧 DEVZIKKY TECH BANNER</span><span class="media-badge">VISUAL</span></div><div class="media-frame"><object class="banner"
   id="bannerObject"
   data="banner2.svg"
   type="image/svg+xml"
   aria-label="DEVZIKKY animated SVG banner">
-</object><img
+</object><img class="banner"
   id="bannerFallback"
   src="banner2.svg"
   alt="DEVZIKKY banner"
