@@ -2417,7 +2417,7 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matc
  let userPaused=false;
  const paint=()=>{const playing=!video.paused&&!video.ended;fab.innerHTML=playing?'⏸️ <span>PAUSE SHOWCASE</span>':'▶️ <span>RESUME PLAYING</span>';fab.setAttribute('aria-pressed',String(!playing));fab.setAttribute('aria-label',playing?'Pause showcase video':'Resume showcase video');center.hidden=playing;};
  const play=async()=>{userPaused=false;try{await video.play();status.textContent='🎬 Video playing enabled 🔥';}catch(err){status.textContent=video.error?'⚠️ VIDEO UNAVAILABLE — check that video.mp4 is available 😱':'🔊 Tap play to allow video and audio playback in this browser.';center.hidden=false;}paint();};
- const pause=()=>{userPaused=true;video.pause();paint();status.textContent='⏸️ Showcase paused by you.';};
+ const pause=()=>{userPaused=true;video.pause();paint();status.textContent='⏸️ Edit paused by you.';};
  const unlockAudio=(event)=>{
   if(userPaused || event?.target?.closest?.('#videoFab, #videoCenterPlay'))return;
   video.muted=false;
@@ -2464,7 +2464,7 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matc
   try{const doc=obj.contentDocument;if(doc){doc.documentElement.style.animationPlayState=paused?'paused':'running';doc.querySelectorAll('*').forEach(el=>{el.style.animationPlayState=paused?'paused':'running';el.style.webkitAnimationPlayState=paused?'paused':'running';});const svg=doc.documentElement;if(svg.pauseAnimations&&svg.unpauseAnimations){paused?svg.pauseAnimations():svg.unpauseAnimations();}}}catch{}
   // CSS animation pause can be applied to the embedded object's element itself.
   obj.style.animationPlayState=paused?'paused':'running';obj.style.filter=paused?'saturate(.65)':'none';
-  btn.innerHTML=paused?'▶️ PLAY BANNER':'⏸️ PAUSE BANNER';btn.setAttribute('aria-pressed',String(paused));status.textContent=paused?'⏸️ Banner paused where supported.':'💫 Banner animation enabled.';
+  btn.innerHTML=paused?'▶️ PLAY BANNER':'⏸️ PAUSE BANNER';btn.setAttribute('aria-pressed',String(paused));status.textContent=paused?'⏸️ Banner paused':'💫 Banner animation enabled.';
  };
  btn.addEventListener('click',()=>{paused=!paused;apply();});obj.addEventListener('error',()=>{obj.hidden=true;fallback.hidden=false;status.textContent='⚠️ Banner loaded as a static image; embedded animation controls may be limited.';});
  obj.addEventListener('load',()=>{if(paused)apply();});
