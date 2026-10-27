@@ -1515,7 +1515,7 @@ h3 {
 .media-card-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; font: 600 .72rem "IBM Plex Mono", monospace; }
 .gif-frame, .banner-frame { display: grid; place-items: center; width: 100%; overflow: hidden; border: 1px solid rgba(0,245,255,.18); border-radius: 14px; background: rgba(0,0,0,.35); }
 .gif-frame { aspect-ratio: 16 / 9; min-height: 150px; margin-bottom: 14px; }
-.banner-frame { aspect-ratio: 900 / 160; min-height: 88px; max-height: 260px; margin-bottom: 14px; }
+.banner-frame { aspect-ratio: 900 / 160; min-height: 150px; max-height: 260px; margin-bottom: 14px; }
 .gif-frame img, .banner-frame object, .banner-frame img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .media-toggle { width: 100%; margin-top: auto; }
 
@@ -2069,7 +2069,16 @@ body.light-theme .video-shell {
       <div class="section-heading reveal"><span class="section-kicker">🪄 EDITING LAB 🎬</span><h2>From small clips to « <strong>Big creativity</strong> »⚡</h2><p>🤫 Outside coding, my creative side is video editing <strong>🎬</strong>🔥 </p></div>
       <div class="media-grid">
         <article class="media-card glass-panel reveal"><div class="media-card-heading"><span>🎞️ ONE PIECE EDIT</span><span class="media-badge">OUTRO</span></div><div class="gif-frame"><img id="outroGif" src="outro.gif" alt="DEVZIKKY animated outro" loading="lazy"></div><button class="glass-control media-toggle" id="gifToggle" type="button" aria-pressed="false">⏸️ PAUSE GIF</button><p class="media-status" id="gifStatus" role="status">✨ EDIT OF MY FAVOURITE ANIME 😊</p></article>
-        <article class="media-card glass-panel reveal"><div class="media-card-heading"><span>🧧 ICON BANNER</span><span class="media-badge">VISUAL</span></div><div class="banner-frame"><object id="bannerObject" data="banner.svg" type="image/svg+xml" aria-label="DEVZIKKY animated SVG banner"></object><img id="bannerFallback" src="banner.svg" alt="DEVZIKKY banner" hidden></div><button class="glass-control media-toggle" id="bannerToggle" type="button" aria-pressed="false">⏸️ PAUSE BANNER</button><p class="media-status" id="bannerStatus" role="status">💌 Banner Active</p></article>
+        <article class="media-card glass-panel reveal"><div class="media-card-heading"><span>🧧 ICON BANNER</span><span class="media-badge">VISUAL</span></div><div class="banner-frame"><object
+  id="bannerObject"
+  data="banner2.svg"
+  type="image/svg+xml"
+  aria-label="DEVZIKKY animated SVG banner">
+</object><img
+  id="bannerFallback"
+  src="banner2.svg"
+  alt="DEVZIKKY banner"
+  hidden></div><button class="glass-control media-toggle" id="bannerToggle" type="button" aria-pressed="false">⏸️ PAUSE BANNER</button><p class="media-status" id="bannerStatus" role="status">💌 Banner Active</p></article>
       </div>
     </section>
 

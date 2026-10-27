@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">DEVZIKKY TECH animated banner</title>
+  <desc id="desc">A colorful animated DEVZIKKY TECH developer banner with information about web, AI, APIs, bots and editing.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#050816"/>
+      <stop offset="0.5" stop-color="#071d45"/>
+      <stop offset="1" stop-color="#12051f"/>
+    </linearGradient>
+    <linearGradient id="brandGradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00f5ff">
+        <animate attributeName="stop-color" values="#00f5ff;#9b5cff;#ff4bd8;#00ffb3;#00f5ff" dur="7s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="0.5" stop-color="#9b5cff">
+        <animate attributeName="stop-color" values="#9b5cff;#ff4bd8;#00ffb3;#00f5ff;#9b5cff" dur="6s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="1" stop-color="#ff4bd8">
+        <animate attributeName="stop-color" values="#ff4bd8;#00ffb3;#00f5ff;#9b5cff;#ff4bd8" dur="8s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    <radialGradient id="orbA"><stop stop-color="#00f5ff" stop-opacity=".7"><animate attributeName="stop-color" values="#00f5ff;#9b5cff;#ff4bd8;#00f5ff" dur="5s" repeatCount="indefinite"/></stop><stop offset="1" stop-color="#00f5ff" stop-opacity="0"/></radialGradient>
+    <radialGradient id="orbB"><stop stop-color="#ff4bd8" stop-opacity=".55"><animate attributeName="stop-color" values="#ff4bd8;#00ffb3;#9b5cff;#ff4bd8" dur="7s" repeatCount="indefinite"/></stop><stop offset="1" stop-color="#ff4bd8" stop-opacity="0"/></radialGradient>
+    <filter id="blur40" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="40"/></filter>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <pattern id="grid" width="55" height="55" patternUnits="userSpaceOnUse"><path d="M55 0H0V55" fill="none" stroke="#83cfff" stroke-opacity=".09" stroke-width="1"/></pattern>
+    <style>
+      .float-a{animation:floatA 8s ease-in-out infinite}
+      .float-b{animation:floatB 10s ease-in-out infinite}
+      .pulse{animation:pulse 2.8s ease-in-out infinite}
+      .spin{transform-origin:800px 450px;animation:spin 24s linear infinite}
+      .scan{animation:scan 5s ease-in-out infinite}
+      @keyframes floatA{0%,100%{transform:translate(0,0)}50%{transform:translate(25px,-18px)}}
+      @keyframes floatB{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,22px)}}
+      @keyframes pulse{0%,100%{opacity:.65}50%{opacity:1}}
+      @keyframes spin{to{transform:rotate(360deg)}}
+      @keyframes scan{0%,100%{opacity:.08;transform:translateY(0)}50%{opacity:.32;transform:translateY(18px)}}
+      text{font-family:Inter,Arial,sans-serif}
+      .mono{font-family:'IBM Plex Mono','Courier New',monospace;letter-spacing:3px}
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" rx="44" fill="url(#bg)"/>
+  <rect x="28" y="28" width="1544" height="844" rx="34" fill="none" stroke="#83cfff" stroke-opacity=".28" stroke-width="2"/>
+  <rect x="28" y="28" width="1544" height="844" rx="34" fill="url(#grid)"/>
+
+  <g class="float-a" filter="url(#blur40)"><circle cx="250" cy="180" r="230" fill="url(#orbA)"/></g>
+  <g class="float-b" filter="url(#blur40)"><circle cx="1370" cy="720" r="260" fill="url(#orbB)"/></g>
+  <circle class="pulse" cx="1320" cy="165" r="4" fill="#00f5ff" filter="url(#glow)"/>
+  <circle class="pulse" cx="280" cy="750" r="5" fill="#ff4bd8" filter="url(#glow)"/>
+
+  <g class="spin" fill="none" stroke="url(#brandGradient)" opacity=".28">
+    <ellipse cx="800" cy="450" rx="610" ry="245" stroke-width="2"/>
+    <ellipse cx="800" cy="450" rx="610" ry="245" stroke-width="2" transform="rotate(60 800 450)"/>
+    <ellipse cx="800" cy="450" rx="610" ry="245" stroke-width="2" transform="rotate(120 800 450)"/>
+  </g>
+
+  <g transform="translate(800 190)">
+    <rect x="-116" y="-31" width="232" height="62" rx="31" fill="#06132e" stroke="url(#brandGradient)" stroke-width="2"/>
+    <text class="mono" x="0" y="8" text-anchor="middle" font-size="21" font-weight="600" fill="#dffaff">DEVZIKKY TECH</text>
+  </g>
+
+  <text x="800" y="405" text-anchor="middle" font-size="126" font-weight="800" letter-spacing="8" fill="url(#brandGradient)" filter="url(#glow)">DEVZIKKY</text>
+  <text x="800" y="470" text-anchor="middle" class="mono" font-size="22" font-weight="600" fill="#d9f8ff">DEVELOPER  •  BUILDER  •  CREATOR</text>
+
+  <g transform="translate(800 575)">
+    <rect x="-500" y="-39" width="1000" height="78" rx="39" fill="#02091b" fill-opacity=".62" stroke="#7de7ff" stroke-opacity=".28"/>
+    <text x="0" y="9" text-anchor="middle" font-size="25" font-weight="600" fill="#f1fbff">WEB  ·  AI  ·  APIs  ·  BOTS  ·  AUTOMATION  ·  EDITING</text>
+  </g>
+
+  <g transform="translate(800 690)">
+    <circle cx="-330" cy="0" r="7" fill="#00ffb3" filter="url(#glow)"/>
+    <text x="-305" y="8" class="mono" font-size="19" fill="#a9c9df">BUILDING FROM LAGOS, NIGERIA</text>
+    <circle cx="295" cy="0" r="7" fill="#ff4bd8" filter="url(#glow)"/>
+    <text x="320" y="8" class="mono" font-size="19" fill="#a9c9df">DEVZIKKY.TECH</text>
+  </g>
+
+  <rect class="scan" x="100" y="790" width="1400" height="2" fill="url(#brandGradient)"/>
+  <text x="800" y="825" text-anchor="middle" class="mono" font-size="15" fill="#7f9bb7">EXPERIMENT  →  BUILD  →  TEST  →  SHIP</text>
+</svg>
